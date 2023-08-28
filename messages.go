@@ -51,5 +51,5 @@ type MessageRepoResponse struct {
 
 type MessageThreadRepoResponse struct {
 	Resp RepoResponse
-	Data MessageThreads
+	Data []MessageThreads
 }
