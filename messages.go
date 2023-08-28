@@ -43,3 +43,13 @@ type MessageThreads struct {
 	Outgoing_mail_status string         `json:"outgoing_mail_status"`
 	Outgoing_mail_info   sql.NullString `json:"outgoing_mail_info"`
 }
+
+type MessageRepoResponse struct {
+	Resp RepoResponse
+	Data Messages
+}
+
+type MessageThreadRepoResponse struct {
+	Resp RepoResponse
+	Data MessageThreads
+}
