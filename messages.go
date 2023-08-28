@@ -21,27 +21,27 @@ type Messages struct {
 }
 
 type MessageThreads struct {
-	Thread_ID            int            `json:"thread_id"`
-	Message_id           string         `json:"message_id"`
-	Unique_id            string         `json:"unique_id"`
-	Message_type         string         `json:"message_type"`
-	Agent_id             string         `json:"agent_id"`
-	Deal_type            string         `json:"deal_type"`
-	Deal_id              sql.NullString `json:"deal_id"`
-	Company_id           string         `json:"company_id"`
-	Contact_name         sql.NullString `json:"contact_name"`
-	Contact_type         string         `json:"contact_type"`
-	Forwarding_email     sql.NullString `json:"forwarding_email"`
-	Send_from            string         `json:"send_from"`
-	Send_to              string         `json:"send_to"`
-	Subject              sql.NullString `json:"subject"`
-	Message_body         sql.NullString `json:"message_body"`
-	Date                 string         `json:"date"`
-	Last_send_attempt    sql.NullString `json:"last_send_attempt"`
-	Sent_by              string         `json:"sent_by"`
-	Status               string         `json:"status"`
-	Outgoing_mail_status string         `json:"outgoing_mail_status"`
-	Outgoing_mail_info   sql.NullString `json:"outgoing_mail_info"`
+	Thread_ID            int            `json:"thread_id,omitempty"`
+	Message_id           string         `json:"message_id,omitempty"`
+	Unique_id            string         `json:"unique_id,omitempty"`
+	Message_type         string         `json:"message_type,omitempty"`
+	Agent_id             string         `json:"agent_id,omitempty"`
+	Deal_type            string         `json:"deal_type,omitempty"`
+	Deal_id              sql.NullString `json:"deal_id,omitempty"`
+	Company_id           string         `json:"company_id,omitempty"`
+	Contact_name         sql.NullString `json:"contact_name,omitempty"`
+	Contact_type         string         `json:"contact_type,omitempty"`
+	Forwarding_email     sql.NullString `json:"forwarding_email,omitempty"`
+	Send_from            string         `json:"send_from,omitempty"`
+	Send_to              string         `json:"send_to,omitempty"`
+	Subject              sql.NullString `json:"subject,omitempty"`
+	Message_body         sql.NullString `json:"message_body,omitempty"`
+	Date                 string         `json:"date,omitempty"`
+	Last_send_attempt    sql.NullString `json:"last_send_attempt,omitempty"`
+	Sent_by              string         `json:"sent_by,omitempty"`
+	Status               string         `json:"status,omitempty"`
+	Outgoing_mail_status string         `json:"outgoing_mail_status,omitempty"`
+	Outgoing_mail_info   sql.NullString `json:"outgoing_mail_info,omitempty"`
 }
 
 type MessageRepoResponse struct {
