@@ -21,7 +21,7 @@ type Messages struct {
 }
 
 type MessageThreads struct {
-	Thread_ID            int            `json:"thread_id,omitempty"`
+	Thread_id            int            `json:"thread_id,omitempty"`
 	Message_id           string         `json:"message_id,omitempty"`
 	Unique_id            string         `json:"unique_id,omitempty"`
 	Message_type         string         `json:"message_type,omitempty"`
@@ -44,6 +44,24 @@ type MessageThreads struct {
 	Outgoing_mail_info   sql.NullString `json:"outgoing_mail_info,omitempty"`
 }
 
+type EmailQueues struct {
+	Queue_id     int            `json:"queue_id"`
+	Type         string         `json:"type"`
+	Company_id   string         `json:"company_id"`
+	Company_name sql.NullString `json:"company_name"`
+	Agent_id     sql.NullString `json:"agent_id"`
+	Agent_name   sql.NullString `json:"agent_name"`
+	Subject      string         `json:"subject"`
+	Email_body   string         `json:"body"`
+	From_email   string         `json:"from_email"`
+	To_email     string         `json:"to_email"`
+	To_name      sql.NullString `json:"to_name"`
+	Notify       string         `json:"notify"`
+	Status       string         `json:"status"`
+	More_info    sql.NullString `json:"more_info"`
+	Date_added   string         `json:"date_added"`
+}
+
 type MessageRepoResponse struct {
 	Resp RepoResponse
 	Data Messages
@@ -52,4 +70,11 @@ type MessageRepoResponse struct {
 type MessageThreadRepoResponse struct {
 	Resp RepoResponse
 	Data []MessageThreads
+}
+
+type IMAP_Event struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+	Host     string `json:"host"`
+	Port     string `json:"port"`
 }

@@ -6,3 +6,7 @@ type RepoResponse struct {
 	Error_message  string `json:"error_message"`
 	//Data           ImportedDealFiles `json:"data"` //ImportedDealFiles //[]map[string]interface{}
 }
+type ScannedQryResp struct {
+	Resp RepoResponse
+	Data [][]interface{}
+}
