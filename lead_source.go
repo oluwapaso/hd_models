@@ -18,6 +18,7 @@ type LeadSource struct {
 	Thank_you_page      string         `json:"thank_you_page"`
 	Settings            string         `json:"settings"`
 	Import_mapping      sql.NullString `json:"import_mapping"`
+	Got_Mails           string         `json:"got_mails"`
 }
 
 type ImportedLeadSourceResp struct {
@@ -29,4 +30,12 @@ type MappedLeadSource struct {
 	Source_id     int    `json:"source_id"`
 	Company_name  string `json:"company_name"`
 	Mapped_import string `json:"mapped_import"`
+}
+
+type DeleteEmailResponse struct {
+	Success            bool   `json:"success"`
+	Error_Message      string `json:"error_message"`
+	No_Of_Inbox_Msgs   int    `json:"no_of_inbox_msgs"`
+	No_Of_Deleted_Msgs int    `json:"no_of_deleted_msgs"`
+	Source_Email       string `json:"source_email"`
 }

@@ -3,9 +3,9 @@ package models
 type cols string
 
 const (
-	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info" +
-		"time_zone,email,website,mc_number,cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_token_b_t" +
-		"company_logo,company_description,bcc_address,departments_info,date_created,account_status,subscription_info" +
+	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info," +
+		"time_zone,email,website,mc_number,cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_token_b_t," +
+		"company_logo,company_description,bcc_address,departments_info,date_created,account_status,subscription_info," +
 		"api_key,sandbox_api_key,settings_version,call_and_sms"
 	DefaultSettingsFeild cols = "settings_id,company_id,new_lead_num,new_quote_num,new_order_num,lead_priority,required_deposit," +
 		"required_type,first_qt_flw_up,quote_expire,asumd_delivered,ass_unvrifd_orders,remove_listing,issue_days,issue_mode,log_out," +

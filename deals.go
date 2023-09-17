@@ -73,7 +73,7 @@ type Destination struct {
 	Full_destination string `json:"full_destination"`
 }
 
-type Payments struct {
+type DealPayments struct {
 	Total_tariff      string `json:"total_tariff"`
 	Total_brokers_fee string `json:"total_brokers_fee"`
 	Carrier_pay       string `json:"carrier_pay"`
@@ -85,4 +85,107 @@ type Vehicles struct {
 	Make         string `json:"make"`
 	Model        string `json:"model"`
 	Full_vehicle string `json:"full_vehicle"`
+}
+
+type History struct {
+	History_Id     int            `json:"history_id"`
+	Company_Id     string         `json:"company_id"`
+	Item_Type      string         `json:"item_type"`
+	Item_Id        int            `json:"item_id"`
+	Item_Unique_Id sql.NullString `json:"item_unique_id"`
+	History_Type   sql.NullString `json:"history_type"`
+	Date_Updated   sql.NullString `json:"date_updated"`
+	Message        sql.NullString `json:"message"`
+	Changes_Made   sql.NullString `json:"changes_made"`
+}
+type AddHistoryParams struct {
+	Company_Id     string `json:"company_id"`
+	Item_Id        int    `json:"item_id"`
+	Item_Unique_Id string `json:"item_unique_id"`
+	Item_Type      string `json:"item_type"`
+	History_Type   string `json:"history_type"`
+	Date_Updated   string `json:"date_updated"`
+	Updated_By     string `json:"updated_by"`
+	Message        string `json:"message"`
+}
+
+type Notes struct {
+	Note_Id    int            `json:"note_id"`
+	Company_Id string         `json:"company_id"`
+	Item_Type  string         `json:"item_type"`
+	Item_Id    int            `json:"item_id"`
+	Note_Type  string         `json:"note_type"`
+	Notes      sql.NullString `json:"notes"`
+	Date       string         `json:"date"`
+	Agent_Id   int            `json:"agent_id"`
+	Added_By   string         `json:"added_by"`
+}
+
+type AddNotesParams struct {
+	Company_Id     string `json:"company_id"`
+	Item_Id        int    `json:"item_id"`
+	Item_Unique_Id string `json:"item_unique_id"`
+	Item_Type      string `json:"item_type"`
+	Date           string `json:"date"`
+	Agent_Id       int    `json:"agent_id"`
+	Note_Type      string `json:"note_type"`
+	Notes          string `json:"note"`
+	Added_By       string `json:"added_by"`
+}
+
+type Payments struct {
+	Payment_Id         int            `json:"payment_id"`
+	Refrence_No        string         `json:"refrence_no"`
+	Order_Id           int            `json:"order_id"`
+	Company_Id         string         `json:"company_id"`
+	Date_Received      string         `json:"date_received"`
+	Payment_From_To    string         `json:"payment_from_to"`
+	Amount             string         `json:"amount"`
+	Deposit_Method     sql.NullString `json:"deposit_method"`
+	Authorization_Code sql.NullString `json:"authorization_code"`
+	Transaction_Id     sql.NullString `json:"transaction_id"`
+	Notes              sql.NullString `json:"notes"`
+	Entered_By         sql.NullString `json:"entered_by"`
+}
+
+type AddPaymentsParams struct {
+	Refrence_No     string
+	Order_Id        int
+	Order_Unique_Id string
+	Company_Id      string
+	Date_Received   string
+	Payment_From_To string
+	Amount          float64
+	Deposit_Method  string
+	Transaction_Id  string
+	Notes           string
+	Entered_By      string
+}
+
+type ItemTypeCountsParams struct {
+	Company_Id string
+	Item_Id    int
+	Item_Type  string
+	Field      string
+	Value      int
+}
+
+type DealVehicles struct {
+	Vehicle_Id      int    `json:"vehicle_id"`
+	Vin             string `json:"vin"`
+	Make            string `json:"make"`
+	Year            string `json:"year"`
+	Color           string `json:"color"`
+	Model           string `json:"model"`
+	Type            string `json:"type"`
+	State           string `json:"state"`
+	Tariff          string `json:"tariff"`
+	Running         string `json:"running"`
+	Ship_Via        string `json:"ship_via"`
+	Lot_Number      string `json:"lot_number"`
+	Brokers_Fee     string `json:"brokers_fee"`
+	Full_Vehicle    string `json:"full_vehicle"`
+	Plate_Number    string `json:"plate_number"`
+	Total_Tariff    string `json:"total_tariff"`
+	Additional_Info string `json:"additional_info"`
 }

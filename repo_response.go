@@ -10,3 +10,7 @@ type ScannedQryResp struct {
 	Resp RepoResponse
 	Data [][]interface{}
 }
+type ScannedSingleQryResp struct {
+	Resp RepoResponse
+	Data []interface{}
+}

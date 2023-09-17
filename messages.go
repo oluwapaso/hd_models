@@ -72,9 +72,51 @@ type MessageThreadRepoResponse struct {
 	Data []MessageThreads
 }
 
-type IMAP_Event struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Host     string `json:"host"`
-	Port     string `json:"port"`
+type AddEmailToMessages struct {
+	Company_Id               string `json:"company_id"`
+	To_Email                 string `json:"to_email"`
+	Agent_Id                 int    `json:"agent_id"`
+	Agent_Email              string `json:"agent_email"`
+	Subject                  string `json:"subject"`
+	Body                     string `json:"body"`
+	Deal_Type                string `json:"deal_type"` //None
+	Deal_Id                  int    `json:"deal_id"`
+	Tracking_Id              int    `json:"tracking_id"`
+	Template_Id              int    `json:"template_id"`
+	Composer                 string `json:"composer"` //none
+	Composer_Msg_Id          string `json:"composer_msg_id"`
+	Contact_Name             string `json:"contact_name"`
+	Contact_Type             string `json:"contact_type"` //NormalShipper
+	CC_Addresses             string `json:"cc_addresses"`
+	BBC_Addresses            string `json:"bcc_addresses"`
+	Attachments              string `json:"attachments"`
+	Automation_UID           string `json:"automation_uid"`
+	Automation_Step_UID      string `json:"automation_step_uid"`
+	Agent_Forwarding_Address string `json:"agent_forwarding_address"`
+	Status                   string `json:"status"`  //Delivered
+	Sent_by                  string `json:"sent_by"` //Agent
+}
+
+type GetOrAddClientMsgInfoParams struct {
+	Company_Id           string `json:"company_id"`
+	Agent_Id             int    `json:"agent_id"`
+	Contact_Info         string `json:"contact_info"`
+	Contact_Type         string `json:"contact_type"`
+	Contact_Name         string `json:"contact_name"`
+	Contact_Account_Type string `json:"contact_accn_type"`
+}
+
+type AddEmailQueueParams struct {
+	Type         string `json:"type"`
+	Company_Id   int    `json:"company_id"`
+	Company_Name string `json:"company_name"`
+	Agent_Id     int    `json:"agent_id"`
+	Agent_Name   string `json:"agent_name"`
+	Subject      string `json:"subject"`
+	Body         string `json:"body"`
+	From_Email   string `json:"from_email"`
+	To_Email     string `json:"to_email"`
+	To_Name      string `json:"to_name"`
+	Notify       string `json:"notify"`
+	Expires_On   string `json:"expires_on"`
 }

@@ -74,3 +74,20 @@ type LambdaInvokeOutput struct {
 	Deal_Type   string `json:"deal_type,omitempty"`
 	Deal_Id     int    `json:"deal_id,omitempty"`
 }
+
+type IMAP_Event struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+	Host     string `json:"host"`
+	Port     string `json:"port"`
+}
+type LambdaDelOldEmlOutput struct {
+	Source_Email       string `json:"source_email"`
+	No_Of_Inbox_Msgs   int    `json:"no_of_inbox_msg"`
+	No_Of_Deleted_Msgs int    `json:"no_of_deleted_msg"`
+}
+
+type Delete_Src_Emails_Error struct {
+	Message      string `json:"message"`
+	Source_Email string `json:"source_email"`
+}
