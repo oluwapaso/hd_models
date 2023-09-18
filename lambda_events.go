@@ -35,6 +35,13 @@ type SMSEvent struct {
 	Deal_Id            int    `json:"deal_id"`
 }
 
+type Lambda_API_Response struct {
+	StatusCode int    `json:"statusCode"`
+	Success    string `json:"success"`
+	Message    string `json:"message"`
+	Data       string `json:"data"`
+}
+
 type LambdaResponse struct {
 	StatusCode   string `json:"status_code"`
 	Message      string `json:"message"`
