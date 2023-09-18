@@ -37,7 +37,7 @@ type SMSEvent struct {
 
 type Lambda_API_Response struct {
 	StatusCode int    `json:"statusCode"`
-	Success    string `json:"success"`
+	Success    bool   `json:"success"`
 	Message    string `json:"message"`
 	Data       string `json:"data"`
 }
