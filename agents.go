@@ -19,3 +19,16 @@ type MultiAgentsResp struct {
 	RepoRes RepoResponse
 	Data    []Agents
 }
+
+type ValidateTokenParams struct {
+	Company_Id   int
+	Agent_Id     int
+	Access_Token string
+}
+
+type TokenDetails struct {
+	ID                  string `json:"id"`
+	Access_Token_Expiry string `json:"access_token_expiry"`
+	Account_Status      string `json:"account_status"`
+	Subscription_Info   string `json:"subscription_info"`
+}
