@@ -45,28 +45,28 @@ type ListOrdersParams struct {
 
 // Used for dynamic fetching so sql.NullString and likes will not be used here
 type OrderLists struct {
-	Order_Id          int    `json:"order_id"`
-	Order_Uniq_Id     string `json:"order_uniq_id"`
-	Company_Id        int    `json:"company_id"`
-	Dates             string `json:"dates"`
-	Car_Run           string `json:"car_run"`
-	Ship_Via          string `json:"ship_via"`
-	Assigned_To       int    `json:"assigned_to"`
-	Assigned_To_Info  string `json:"assigned_to_info"`
-	Origin            string `json:"origin"`
-	Destination       string `json:"destination"`
-	Dispatch_Details  string `json:"dispatch_details"`
-	Vehicles          string `json:"vehicles"`
-	Shipper           string `json:"shipper"`
-	Payments          string `json:"payments"`
-	Type              string `json:"type"`
-	Source            string `json:"source"`
-	Source_Type       string `json:"source_type"`
-	Status            string `json:"status"`
-	Item_Counts       string `json:"item_counts"`
-	Issues            string `json:"issues"`
-	Shipper_Signature string `json:"shipper_signature"`
-	Subscribed_Drips  string `json:"subscribed_drips"`
+	Order_Id          int         `json:"order_id"`
+	Order_Uniq_Id     string      `json:"order_uniq_id"`
+	Company_Id        int         `json:"company_id"`
+	Dates             string      `json:"dates"`
+	Car_Run           string      `json:"car_run"`
+	Ship_Via          string      `json:"ship_via"`
+	Assigned_To       int         `json:"assigned_to"`
+	Assigned_To_Info  string      `json:"assigned_to_info"`
+	Origin            string      `json:"origin"`
+	Destination       string      `json:"destination"`
+	Dispatch_Details  string      `json:"dispatch_details"`
+	Vehicles          string      `json:"vehicles"`
+	Shipper           interface{} `json:"shipper"`
+	Payments          string      `json:"payments"`
+	Type              string      `json:"type"`
+	Source            string      `json:"source"`
+	Source_Type       string      `json:"source_type"`
+	Status            string      `json:"status"`
+	Item_Counts       string      `json:"item_counts"`
+	Issues            string      `json:"issues"`
+	Shipper_Signature string      `json:"shipper_signature"`
+	Subscribed_Drips  string      `json:"subscribed_drips"`
 }
 type OrderDetails struct {
 	OrderLists
