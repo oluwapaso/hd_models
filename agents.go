@@ -32,3 +32,9 @@ type TokenDetails struct {
 	Account_Status      string `json:"account_status"`
 	Subscription_Info   string `json:"subscription_info"`
 }
+
+type ValidateSecurityParams struct {
+	User_Id    int    `json:"user_id"`
+	Company_Id int    `json:"company_id"`
+	Field      string `json:"field"`
+}

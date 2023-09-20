@@ -83,8 +83,8 @@ const (
 		"source,source_type,source_id,referral,payments,shipper,origin,destination,vehicles,load_on,deliver_on,posted_board,hdesk_post_id," +
 		"dispatch_details,status,type,resolve_issue_to,original_email,quote_id_converted,quote_uniq_id_conv,tracking_number,converted_details," +
 		"order_token,cd_dispatch_id,cd_dispatch_status,user_order_id,automate,driver_id,carrier_id,shipper_signature,driver_signature," +
-		"automation_id,automation_status,tags,item_counts,issues,dates_created,shpr_shipper_id,dispatched_to,p_terminal_id,d_terminal_id," +
-		"referral_id"
+		"subscribed_drips,automation_id,automation_status,tags,item_counts,issues,dates_created,shpr_shipper_id,dispatched_to,p_terminal_id," +
+		"d_terminal_id,referral_id"
 
 	ImportedDealFilesField cols = "can_start_import,data_headers,data_rows,data_type,date_added,file_location,import_id,imported," +
 		"imported_data,rejected_leads,total_file_data,uploaded_by"

@@ -18,18 +18,18 @@ type CommonDealFields struct {
 	Payments             sql.NullString `json:"payments"`
 	Type                 sql.NullString `json:"type"`
 	Original_email       sql.NullString `json:"original_email"`
-	Quote_token          sql.NullString `json:"quote_token"`
 }
 
 type OrderFields struct {
 	Order_id      int            `json:"order_id"`
-	Order_uniq_id int            `json:"order_uniq_id"`
+	Order_uniq_id string         `json:"order_uniq_id"`
 	Mode          sql.NullString `json:"mode"`
 }
 
 type QuoteFields struct {
-	Quote_id      int `json:"quote_id"`
-	Quote_uniq_id int `json:"quotet_uniq_id"`
+	Quote_id      int            `json:"quote_id"`
+	Quote_uniq_id int            `json:"quotet_uniq_id"`
+	Quote_token   sql.NullString `json:"quote_token"`
 }
 
 type Shipper struct {
