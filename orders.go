@@ -48,25 +48,25 @@ type OrderLists struct {
 	Order_Id          int         `json:"order_id"`
 	Order_Uniq_Id     string      `json:"order_uniq_id"`
 	Company_Id        int         `json:"company_id"`
-	Dates             string      `json:"dates"`
+	Dates             interface{} `json:"dates"`
 	Car_Run           string      `json:"car_run"`
 	Ship_Via          string      `json:"ship_via"`
 	Assigned_To       int         `json:"assigned_to"`
-	Assigned_To_Info  string      `json:"assigned_to_info"`
-	Origin            string      `json:"origin"`
-	Destination       string      `json:"destination"`
-	Dispatch_Details  string      `json:"dispatch_details"`
-	Vehicles          string      `json:"vehicles"`
+	Assigned_To_Info  interface{} `json:"assigned_to_info"`
+	Origin            interface{} `json:"origin"`
+	Destination       interface{} `json:"destination"`
+	Dispatch_Details  interface{} `json:"dispatch_details"`
+	Vehicles          interface{} `json:"vehicles"`
 	Shipper           interface{} `json:"shipper"`
-	Payments          string      `json:"payments"`
+	Payments          interface{} `json:"payments"`
 	Type              string      `json:"type"`
 	Source            string      `json:"source"`
 	Source_Type       string      `json:"source_type"`
 	Status            string      `json:"status"`
-	Item_Counts       string      `json:"item_counts"`
-	Issues            string      `json:"issues"`
+	Item_Counts       interface{} `json:"item_counts"`
+	Issues            interface{} `json:"issues"`
 	Shipper_Signature string      `json:"shipper_signature"`
-	Subscribed_Drips  string      `json:"subscribed_drips"`
+	Subscribed_Drips  interface{} `json:"subscribed_drips"`
 }
 type OrderDetails struct {
 	OrderLists
