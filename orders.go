@@ -41,6 +41,7 @@ type ListOrdersParams struct {
 	SearchParams []interface{}
 	StartFrom    int
 	Limit        int
+	Order_By     string
 }
 
 // Used for dynamic fetching so sql.NullString and likes will not be used here
