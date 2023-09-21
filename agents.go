@@ -38,3 +38,12 @@ type ValidateSecurityParams struct {
 	Company_Id int    `json:"company_id"`
 	Field      string `json:"field"`
 }
+
+type UpdateAgentSortParams struct {
+	Company_Id     int
+	Agent_Id       int
+	Update_Type    string
+	Direction      string
+	Sort_By        string
+	Update_Literal string
+}
