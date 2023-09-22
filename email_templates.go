@@ -24,7 +24,7 @@ type EmailTempLists struct {
 	Email_Unique_Id int    `json:"email_unique_id"`
 	Email_Id        int    `json:"email_id"`
 	Company_Id      string `json:"company_id,omitempty"`
-	Email_type      string `json:"email_type,omitempty"`
+	Email_Type      string `json:"email_type,omitempty"`
 	Name            string `json:"name"`
 	Used_For        string `json:"used_for"`
 	For_Follow_Up   string `json:"for_follow_up"`
