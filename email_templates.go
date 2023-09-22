@@ -36,6 +36,8 @@ type EmailTempLists struct {
 }
 
 type EmailTempListsResponse struct {
+	Total_Records   int         `json:"total_records"`
+	Total_Returned  int         `json:"total_returned"`
 	Has_More        string      `json:"has_more"`
 	Email_Templates interface{} `json:"email_templates"`
 }
