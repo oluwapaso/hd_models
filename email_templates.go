@@ -35,6 +35,13 @@ type EmailTempLists struct {
 	CC_Addresses    string `json:"cc_addresses,omitempty"`
 }
 
+type EmailTempListsResponse struct {
+	Total_Records   int         `json:"total_records"`
+	Total_Returned  int         `json:"total_returned"`
+	Has_More        string      `json:"has_more"`
+	Email_Templates interface{} `json:"email_templates"`
+}
+
 type SelEmlTempParams struct {
 	Company_Id      string
 	Email_Unique_Id int
