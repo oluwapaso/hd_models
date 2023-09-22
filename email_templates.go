@@ -21,18 +21,18 @@ type EmailTemplate struct {
 
 // Used for dynamic fetching. So sql.NullString and likes will not be used here
 type EmailTempLists struct {
-	Email_Unique_Id int    `json:"email_unique_id"`
-	Email_Id        int    `json:"email_id"`
-	Company_Id      string `json:"company_id,omitempty"`
-	Email_Type      string `json:"email_type,omitempty"`
-	Name            string `json:"name"`
-	Used_For        string `json:"used_for"`
-	For_Follow_Up   string `json:"for_follow_up"`
-	Html_Contents   string `json:"html_contents,omitempty"`
-	Subject         string `json:"subject,omitempty"`
-	Description     string `json:"description,omitempty"`
-	Attachment      string `json:"attachment,omitempty"`
-	CC_Addresses    string `json:"cc_addresses,omitempty"`
+	Email_Unique_Id int         `json:"email_unique_id"`
+	Email_Id        int         `json:"email_id"`
+	Company_Id      string      `json:"company_id,omitempty"`
+	Email_Type      string      `json:"email_type,omitempty"`
+	Name            string      `json:"name"`
+	Used_For        string      `json:"used_for"`
+	For_Follow_Up   string      `json:"for_follow_up"`
+	Html_Contents   string      `json:"html_contents,omitempty"`
+	Subject         string      `json:"subject,omitempty"`
+	Description     string      `json:"description,omitempty"`
+	Attachment      interface{} `json:"attachment,omitempty"`
+	CC_Addresses    string      `json:"cc_addresses,omitempty"`
 }
 
 type EmailTempListsResponse struct {
@@ -57,6 +57,12 @@ type ListEmailTemplatesParams struct {
 	Fields     string
 	StartFrom  int
 	Limit      int
+}
+
+type SingleEmlTempParams struct {
+	Type        string
+	Company_Id  int
+	Template_Id int
 }
 
 type TempReplaceParams struct {
