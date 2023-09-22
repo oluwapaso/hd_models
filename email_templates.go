@@ -19,11 +19,37 @@ type EmailTemplate struct {
 	CC_Addresses    sql.NullString `json:"cc_addresses"`
 }
 
+// Used for dynamic fetching. So sql.NullString and likes will not be used here
+type EmailTempLists struct {
+	Email_Unique_Id int    `json:"email_unique_id"`
+	Email_Id        int    `json:"email_id"`
+	Company_Id      string `json:"company_id,omitempty"`
+	Email_type      string `json:"email_type,omitempty"`
+	Name            string `json:"name"`
+	Used_For        string `json:"used_for"`
+	For_Follow_Up   string `json:"for_follow_up"`
+	Html_Contents   string `json:"html_contents,omitempty"`
+	Subject         string `json:"subject,omitempty"`
+	Description     string `json:"description,omitempty"`
+	Attachment      string `json:"attachment,omitempty"`
+	CC_Addresses    string `json:"cc_addresses,omitempty"`
+}
+
 type SelEmlTempParams struct {
 	Company_Id      string
 	Email_Unique_Id int
 	Search_By       string
 	Fields          string
+}
+
+type ListEmailTemplatesParams struct {
+	Type       string
+	Company_Id int
+	Type_Query string
+	Type_Value string
+	Fields     string
+	StartFrom  int
+	Limit      int
 }
 
 type TempReplaceParams struct {
