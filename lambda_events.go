@@ -10,6 +10,9 @@ type MailerEvent struct {
 	Subject       string `json:"subject"`
 	Email_Body    string `json:"email_body"`
 	CC_Addresses  string `json:"cc_addresses"`
+	BCC_Addresses string `json:"bcc_addresses"`
+	Attachments   string `json:"attachments"`
+	Files         string `json:"files"`
 	SMTP_Host     string `json:"smtp_host,omitempty"`
 	SMTP_Port     int    `json:"smtp_port,omitempty"`
 	SMTP_Username string `json:"smtp_username,omitempty"`
