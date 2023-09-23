@@ -18,3 +18,8 @@ type FileLists struct {
 	File_Loc       string `json:"file_loc"`
 	Extension      string `json:"extension"`
 }
+
+type FileListsResponse struct {
+	Total_Returned int         `json:"total_returned"`
+	Files          interface{} `json:"files"`
+}
