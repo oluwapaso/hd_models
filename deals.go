@@ -171,21 +171,21 @@ type ItemTypeCountsParams struct {
 }
 
 type DealVehicles struct {
-	Vehicle_Id      int    `json:"vehicle_id"`
-	Vin             string `json:"vin"`
-	Make            string `json:"make"`
-	Year            string `json:"year"`
-	Color           string `json:"color"`
-	Model           string `json:"model"`
-	Type            string `json:"type"`
-	State           string `json:"state"`
-	Tariff          string `json:"tariff"`
-	Running         string `json:"running"`
-	Ship_Via        string `json:"ship_via"`
-	Lot_Number      string `json:"lot_number"`
-	Brokers_Fee     string `json:"brokers_fee"`
-	Full_Vehicle    string `json:"full_vehicle"`
-	Plate_Number    string `json:"plate_number"`
-	Total_Tariff    string `json:"total_tariff"`
-	Additional_Info string `json:"additional_info"`
+	Vehicle_Id      int         `json:"vehicle_id"`
+	Vin             string      `json:"vin"`
+	Make            string      `json:"make"`
+	Year            interface{} `json:"year"`
+	Color           string      `json:"color"`
+	Model           string      `json:"model"`
+	Type            string      `json:"type"`
+	State           string      `json:"state"`
+	Tariff          string      `json:"tariff"`
+	Running         string      `json:"running"`
+	Ship_Via        string      `json:"ship_via"`
+	Lot_Number      string      `json:"lot_number"`
+	Brokers_Fee     string      `json:"brokers_fee"`
+	Full_Vehicle    string      `json:"full_vehicle"`
+	Plate_Number    string      `json:"plate_number"`
+	Total_Tariff    string      `json:"total_tariff"`
+	Additional_Info string      `json:"additional_info"`
 }
