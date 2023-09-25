@@ -96,6 +96,7 @@ type OutgoingMailInfo struct {
 	Clicks              string `json:"clicks"`
 	Unique_Clicks       string `json:"unique_clicks"`
 	Opens               string `json:"opens"`
+	Charged             string `json:"charged"`
 	Unique_Opens        string `json:"unique_opens"`
 	Last_Unique_Click   string `json:"last_unique_click"`
 	Last_Unique_Open    string `json:"last_unique_open"`

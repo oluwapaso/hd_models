@@ -83,9 +83,10 @@ type AddEmailToMessages struct {
 	Deal_Id                  int    `json:"deal_id"`
 	Tracking_Id              int    `json:"tracking_id"`
 	Template_Id              int    `json:"template_id"`
-	Composer                 string `json:"composer"` //none
-	Composer_Msg_Id          string `json:"composer_msg_id"`
+	Composer                 string `json:"composer"`        //none
+	Composer_Msg_Id          string `json:"composer_msg_id"` //Used as alternate contact
 	Contact_Name             string `json:"contact_name"`
+	Contact_Phone            string `json:"contact_phone"`
 	Contact_Type             string `json:"contact_type"` //NormalShipper
 	CC_Addresses             string `json:"cc_addresses"`
 	BBC_Addresses            string `json:"bcc_addresses"`
@@ -97,10 +98,33 @@ type AddEmailToMessages struct {
 	Sent_by                  string `json:"sent_by"` //Agent
 }
 
+type AddSMSToMessages struct {
+	Company_Id               string `json:"company_id"`
+	From_Number              string `json:"from_number"`
+	To_Number                string `json:"to_number"`
+	Agent_Id                 int    `json:"agent_id"`
+	Agent_Email              string `json:"agent_email"`
+	Body                     string `json:"body"`
+	Deal_Type                string `json:"deal_type"` //None
+	Deal_Id                  int    `json:"deal_id"`
+	Template_Id              int    `json:"template_id"`
+	Composer                 string `json:"composer"` //none
+	Composer_Msg_Id          string `json:"composer_msg_id"`
+	Contact_Name             string `json:"contact_name"`
+	Contact_Email            string `json:"contact_email"` //Used as alternate contact
+	Contact_Type             string `json:"contact_type"`  //NormalShipper
+	Automation_UID           string `json:"automation_uid"`
+	Automation_Step_UID      string `json:"automation_step_uid"`
+	Agent_Forwarding_Address string `json:"agent_forwarding_address"`
+	Status                   string `json:"status"`  //Delivered
+	Sent_by                  string `json:"sent_by"` //Agent
+}
+
 type GetOrAddClientMsgInfoParams struct {
 	Company_Id           string `json:"company_id"`
 	Agent_Id             int    `json:"agent_id"`
 	Contact_Info         string `json:"contact_info"`
+	Alt_Contact_Info     string `json:"alt_contact_info"`
 	Contact_Type         string `json:"contact_type"`
 	Contact_Name         string `json:"contact_name"`
 	Contact_Account_Type string `json:"contact_accn_type"`

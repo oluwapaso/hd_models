@@ -13,7 +13,7 @@ const (
 		"payment_markup,request_for,payment_option,request_type,auto_lock,sendgrid_api_key,thank_you,tracking_script,hotjar_script," +
 		"livechat_script,auto_quote,auto_quote_formula,notify_before_pickup,driver_before_temp,shipper_before_temp,notify_on_pickup," +
 		"driver_on_temp,shipper_on_temp,system_sent_email,auto_responder_sett,auto_responder_body,return_url_pg_header," +
-		"return_url_pg_subheader,return_url_pg_body,default_mailer"
+		"return_url_pg_subheader,return_url_pg_body,default_mailer,external_form_bg_image"
 	EmailsTemplatesField cols = "email_unique_id,email_id,company_id,email_type,name,used_for,for_follow_up,text_contents,html_contents," +
 		"subject,description,attachment,cc_addresses"
 
