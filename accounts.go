@@ -43,3 +43,9 @@ type ChargesDetails struct {
 	Table_name     string `json:"table_name"`
 	Num_Of_Charges int    `json:"num_of_charges"`
 }
+
+type ValidateAPIKeyParams struct {
+	Account_ID string
+	API_Key    string
+	APP_Stage  string
+}
