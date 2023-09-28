@@ -8,7 +8,7 @@ type CitySearchParams struct {
 
 type CityExtended struct {
 	City      string `json:"city"`
-	State     string `json:"model,omitempty"`
+	State     string `json:"state_code,omitempty"`
 	Zip       string `json:"zip"`
 	Latitude  string `json:"latitude,omitempty"`
 	Longitude string `json:"longitude,omitempty"`
