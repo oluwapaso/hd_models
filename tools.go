@@ -8,9 +8,15 @@ type CitySearchParams struct {
 
 type CityExtended struct {
 	City      string `json:"city"`
-	State     string `json:"state_code"`
+	State     string `json:"model,omitempty"`
 	Zip       string `json:"zip"`
 	Latitude  string `json:"latitude,omitempty"`
 	Longitude string `json:"longitude,omitempty"`
 	County    string `json:"county,omitempty"`
+}
+
+type VehicleSearchResp struct {
+	Cronetic_Id string `json:"cronetic_id,omitempty"`
+	Make        string `json:"make,omitempty"`
+	Model       string `json:"model,omitempty"`
 }
