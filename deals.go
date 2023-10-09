@@ -28,7 +28,7 @@ type OrderFields struct {
 
 type QuoteFields struct {
 	Quote_id      int            `json:"quote_id"`
-	Quote_uniq_id int            `json:"quotet_uniq_id"`
+	Quote_uniq_id string         `json:"quotet_uniq_id"`
 	Quote_token   sql.NullString `json:"quote_token"`
 }
 
