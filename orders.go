@@ -1,5 +1,7 @@
 package models
 
+import "database/sql"
+
 type Orders struct {
 	OrderFields
 	CommonDealFields
@@ -108,4 +110,10 @@ type ListOrdersResponse struct {
 	DB_Query_Response
 	Orders  []Orders
 	Message string
+}
+
+type InsertOrderParams struct {
+	Tx           *sql.Tx
+	InsertField  string
+	InsertValues []interface{}
 }
