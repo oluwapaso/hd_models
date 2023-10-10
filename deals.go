@@ -114,3 +114,9 @@ type DealVehicles struct {
 	Total_Tariff    string      `json:"total_tariff"`
 	Additional_Info string      `json:"additional_info"`
 }
+
+type DeleteDealsParams struct {
+	Tx        *sql.Tx
+	Item_Type string
+	Item_Id   []interface{}
+}
