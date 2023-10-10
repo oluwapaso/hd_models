@@ -144,3 +144,10 @@ type AddEmailQueueParams struct {
 	Notify       string `json:"notify"`
 	Expires_On   string `json:"expires_on"`
 }
+
+type UpdateMsgThreadParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
+}

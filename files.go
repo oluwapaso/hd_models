@@ -1,5 +1,7 @@
 package models
 
+import "database/sql"
+
 type LIstFilesParams struct {
 	Type       string
 	Company_Id int
@@ -22,4 +24,11 @@ type FileLists struct {
 type FileListsResponse struct {
 	Total_Returned int         `json:"total_returned"`
 	Files          interface{} `json:"files"`
+}
+
+type UpdateDealFilesParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
 }
