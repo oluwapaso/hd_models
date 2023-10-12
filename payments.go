@@ -52,3 +52,27 @@ type AddPaymentsParams struct {
 	Notes           string
 	Entered_By      string
 }
+
+type PaymentList struct {
+	Refrence_No         string `json:"refrence_no"`
+	Status              string `json:"status"`
+	Item_Type           string `json:"item_type"`
+	Item_Id             string `json:"item_id"`
+	Company_Id          string `json:"company_id"`
+	Date_Received       string `json:"date_received"`
+	Payment_From_To     string `json:"payment_from_to"`
+	Amount              string `json:"amount"`
+	Deposit_Method      string `json:"deposit_method"`
+	Deposit_Type        string `json:"deposit_type"`
+	CC_Last_Digit       string `json:"cc_last_digits"`
+	CC_Type             string `json:"cc_type"`
+	Other_CC_Type       string `json:"other_cc_type"`
+	CC_Expiration_Month string `json:"cc_expiration_month"`
+	CC_Expiration_Year  string `json:"cc_expiration_year"`
+	Authorization_Code  string `json:"authorization_code"`
+	Check_Number        string `json:"check_number"`
+	Transaction_Id      string `json:"transaction_id"`
+	Notes               string `json:"notes"`
+	Receipt_Link        string `json:"receipt_link"`
+	Entered_By          string `json:"entered_by"`
+}
