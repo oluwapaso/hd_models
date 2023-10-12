@@ -117,3 +117,10 @@ type InsertOrderParams struct {
 	InsertField  string
 	InsertValues []interface{}
 }
+
+type CollectSignatureParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
+}
