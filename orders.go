@@ -124,3 +124,18 @@ type CollectSignatureParams struct {
 	UpdateValues []interface{}
 	Where        string
 }
+
+type UpdateOrderParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
+}
+
+type OrderIssue struct {
+	Id       string `json:"id"`
+	Date     string `json:"date"`
+	Type     string `json:"type"`
+	Notes    string `json:"notes"`
+	Added_By string `json:"added_by"`
+}

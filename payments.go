@@ -40,17 +40,27 @@ type Payments struct {
 }
 
 type AddPaymentsParams struct {
-	Refrence_No     string
-	Order_Id        int
-	Order_Unique_Id string
-	Company_Id      string
-	Date_Received   string
-	Payment_From_To string
-	Amount          float64
-	Deposit_Method  string
-	Transaction_Id  string
-	Notes           string
-	Entered_By      string
+	Type                string
+	Refrence_No         string
+	Order_Id            int
+	Order_Unique_Id     string
+	Company_Id          string
+	Date_Received       string
+	Payment_From_To     string
+	Amount              float64
+	Deposit_Method      string
+	Deposit_Type        string
+	CC_Last_Digit       int
+	CC_Type             string
+	Other_CC_Type       string
+	CC_Expiration_Month string
+	CC_Expiration_Year  string
+	Authorization_Code  string
+	Check_Number        string
+	Transaction_Id      string
+	Notes               string
+	Receipt_Link        string
+	Entered_By          string
 }
 
 type PaymentList struct {
