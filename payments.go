@@ -7,6 +7,7 @@ type OpenBalanceParams struct {
 	Item_Type     string
 	Item_Id       int
 	Deal_Payments interface{}
+	Tx            *sql.Tx
 }
 
 type LoadPaymentsParams struct {
@@ -15,6 +16,7 @@ type LoadPaymentsParams struct {
 	Item_Type   string
 	Item_Id     int
 	Fields      string
+	Tx          *sql.Tx
 }
 
 type UpdatePaymentsParams struct {
@@ -41,9 +43,9 @@ type Payments struct {
 
 type AddPaymentsParams struct {
 	Type                string
-	Refrence_No         string
 	Order_Id            int
 	Order_Unique_Id     string
+	Refrence_No         string
 	Company_Id          string
 	Date_Received       string
 	Payment_From_To     string
