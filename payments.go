@@ -16,6 +16,8 @@ type LoadPaymentsParams struct {
 	Item_Type   string
 	Item_Id     int
 	Fields      string
+	TypeQuery   string
+	TypeValues  string
 	Tx          *sql.Tx
 }
 
