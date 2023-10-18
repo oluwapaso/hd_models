@@ -21,6 +21,19 @@ type LoadPaymentsParams struct {
 	Tx          *sql.Tx
 }
 
+type LoadSinglePaymentParams struct {
+	Search_Type string
+	Company_Id  int
+	Paymet_Id   int
+	Fields      string
+}
+
+type DeletePaymentParams struct {
+	Company_Id int
+	Paymet_Id  int
+	Tx         *sql.Tx
+}
+
 type UpdatePaymentsParams struct {
 	Tx           *sql.Tx
 	UpdateField  string
@@ -68,6 +81,7 @@ type AddPaymentsParams struct {
 }
 
 type PaymentList struct {
+	Payment_Id          int    `json:"payment_id"`
 	Refrence_No         string `json:"refrence_no"`
 	Status              string `json:"status"`
 	Item_Type           string `json:"item_type"`
