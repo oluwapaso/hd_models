@@ -60,9 +60,13 @@ type ListEmailTemplatesParams struct {
 }
 
 type SingleEmlTempParams struct {
-	Type        string
-	Company_Id  int
-	Template_Id int
+	Type          string
+	Company_Id    int
+	Template_Id   int
+	Template_Name string
+	Used_For      string
+	Temp_Type     string
+	Fields        string
 }
 
 type TempReplaceParams struct {
