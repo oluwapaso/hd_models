@@ -1,5 +1,7 @@
 package models
 
+import "database/sql"
+
 type Accounts struct {
 	Account_id        int    `json:"account_id"`
 	Company_unique_id string `json:"company_unique_id"`
@@ -34,6 +36,7 @@ type BrokerErrorInfo struct {
 	Deal_id           string `json:"deal_id"`
 	Message_displayed string `json:"message_displayed"`
 	Log_for_system    string `json:"log_for_system"` //Default No
+	DBConn            *sql.DB
 }
 
 type ChargesDetails struct {
@@ -48,4 +51,38 @@ type ValidateAPIKeyParams struct {
 	Account_ID string
 	API_Key    string
 	APP_Stage  string
+}
+
+type ReferralsListsParams struct {
+	Type         string
+	Company_Id   int
+	Account_Type string
+	Fields       string
+	Order_By     string
+	Paginated    string
+	Start_From   int
+	Limit        int
+}
+
+type CountReferralDealsParams struct {
+	Referral_Id int
+	LoadReportsParams
+}
+
+type ReferralsDispDataParams struct {
+	Referral_Id int
+	LoadReportsParams
+}
+
+type ReferralsReportData struct {
+	Referral_Name    string  `json:"referral"`
+	Status           string  `json:"status"`
+	Total_Leads_Amnt float64 `json:"total_leads_amount"`
+	DealsReportData
+}
+
+type UpdateDlftRoutingNumParams struct {
+	Company_Id   int
+	Phone_Number string
+	Tx           *sql.Tx
 }

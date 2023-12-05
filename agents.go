@@ -47,3 +47,40 @@ type UpdateAgentSortParams struct {
 	Sort_By        string
 	Update_Literal string
 }
+
+type AgentsListsParams struct {
+	Type       string
+	Company_Id int
+	Agent_Id   string
+	Fields     string
+	Order_By   string
+	Paginated  string
+	Start_From int
+	Limit      int
+}
+
+type CountAgentsDealsParams struct {
+	Agent_Id int
+	LoadReportsParams
+}
+
+type AgentsDispDataParams struct {
+	Agent_Id         int
+	Define_Orders_As string
+	LoadReportsParams
+}
+
+type AgentsReportData struct {
+	Agent_Id        int     `json:"agent_id"`
+	Agent_Name      string  `json:"agent_name"`
+	Agent_Status    string  `json:"status"`
+	Total_Comm_Amnt float64 `json:"total_comm_amount"`
+	DealsReportData
+}
+
+type UpdateAgentRoutingNumParams struct {
+	Company_Id   int
+	Agent_Id     int
+	Phone_Number string
+	Tx           *sql.Tx
+}

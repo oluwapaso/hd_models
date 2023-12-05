@@ -48,62 +48,63 @@ type ListOrdersParams struct {
 
 // Used for dynamic fetching so sql.NullString and likes will not be used here
 type OrderLists struct {
-	Order_Id          int         `json:"order_id"`
-	Order_Uniq_Id     string      `json:"order_uniq_id"`
-	Company_Id        int         `json:"company_id"`
-	Dates             interface{} `json:"dates"`
-	Car_Run           string      `json:"car_run"`
-	Ship_Via          string      `json:"ship_via"`
-	Assigned_To       int         `json:"assigned_to"`
-	Assigned_To_Info  interface{} `json:"assigned_to_info"`
-	Origin            interface{} `json:"origin"`
-	Destination       interface{} `json:"destination"`
-	Dispatch_Details  interface{} `json:"dispatch_details"`
-	Vehicles          interface{} `json:"vehicles"`
-	Shipper           interface{} `json:"shipper"`
-	Payments          interface{} `json:"payments"`
-	Type              string      `json:"type"`
-	Source            string      `json:"source"`
-	Source_Type       string      `json:"source_type"`
-	Status            string      `json:"status"`
-	Item_Counts       interface{} `json:"item_counts"`
-	Issues            interface{} `json:"issues"`
-	Shipper_Signature string      `json:"shipper_signature"`
-	Subscribed_Drips  interface{} `json:"subscribed_drips"`
+	Order_Id             int         `json:"order_id"`
+	Order_Uniq_Id        string      `json:"order_uniq_id"`
+	Company_Id           int         `json:"company_id"`
+	Dates                interface{} `json:"dates"`
+	Car_Run              string      `json:"car_run"`
+	Ship_Via             string      `json:"ship_via"`
+	Assigned_To          int         `json:"assigned_to"`
+	Original_Assigned_To int         `json:"original_assigned_to"`
+	Assigned_To_Info     interface{} `json:"assigned_to_info"`
+	Origin               interface{} `json:"origin"`
+	Destination          interface{} `json:"destination"`
+	Dispatch_Details     interface{} `json:"dispatch_details"`
+	Vehicles             interface{} `json:"vehicles"`
+	Shipper              interface{} `json:"shipper"`
+	Payments             interface{} `json:"payments"`
+	Type                 string      `json:"type"`
+	Source               string      `json:"source"`
+	Source_Type          string      `json:"source_type"`
+	Status               string      `json:"status"`
+	Item_Counts          interface{} `json:"item_counts"`
+	Issues               interface{} `json:"issues"`
+	Shipper_Signature    string      `json:"shipper_signature"`
+	Subscribed_Drips     interface{} `json:"subscribed_drips"`
 }
 type OrderDetails struct {
 	OrderLists
-	Mode                 string `json:"mode,omitempty"`
-	Original_Assigned_To string `json:"original_assigned_to,omitempty"`
-	Source_Id            string `json:"source_id,omitempty"`
-	Referral             string `json:"referral,omitempty"`
-	Load_On              string `json:"load_on,omitempty"`
-	Deliver_On           string `json:"deliver_on,omitempty"`
-	Posted_Board         string `json:"posted_board,omitempty"`
-	Original_Email       string `json:"original_email,omitempty"`
-	HDesk_Post_Id        string `json:"hdesk_post_id,omitempty"`
-	Resolve_Issue_To     string `json:"resolve_issue_to,omitempty"`
-	Quote_Id_Converted   string `json:"quote_id_converted,omitempty"`
-	Quote_Uniq_Id_Conv   string `json:"quote_uniq_id_conv,omitempty"`
-	Tracking_Number      string `json:"tracking_number,omitempty"`
-	Converted_Details    string `json:"converted_details,omitempty"`
-	Order_Token          string `json:"order_token,omitempty"`
-	CD_Dispatch_Id       string `json:"cd_dispatch_id,omitempty"`
-	CD_Dispatch_Status   string `json:"cd_dispatch_status,omitempty"`
-	User_Order_Id        string `json:"user_order_id,omitempty"`
-	Automate             string `json:"automate,omitempty"`
-	Driver_Id            string `json:"driver_id,omitempty"`
-	Carrier_Id           string `json:"carrier_id,omitempty"`
-	Driver_Signature     string `json:"driver_signature,omitempty"`
-	Automation_Id        string `json:"automation_id,omitempty"`
-	Automation_Status    string `json:"automation_status,omitempty"`
-	Tags                 string `json:"tags,omitempty"`
-	Dates_Created        string `json:"dates_created,omitempty"`
-	Shpr_Shipper_Id      string `json:"shpr_shipper_id,omitempty"`
-	Dispatched_To        string `json:"dispatched_to,omitempty"`
-	P_Terminal_Id        string `json:"p_terminal_id,omitempty"`
-	D_Terminal_Id        string `json:"d_terminal_id,omitempty"`
-	Referral_Id          string `json:"referral_id,omitempty"`
+	Mode                 string      `json:"mode,omitempty"`
+	Original_Assigned_To string      `json:"original_assigned_to,omitempty"`
+	Source_Id            string      `json:"source_id,omitempty"`
+	Referral             string      `json:"referral,omitempty"`
+	Load_On              string      `json:"load_on,omitempty"`
+	Deliver_On           string      `json:"deliver_on,omitempty"`
+	Posted_Board         interface{} `json:"posted_board,omitempty"`
+	Original_Email       string      `json:"original_email,omitempty"`
+	HD_Post_Id           string      `json:"hd_post_id,omitempty"`
+	Resolve_Issue_To     string      `json:"resolve_issue_to,omitempty"`
+	Quote_Id_Converted   string      `json:"quote_id_converted,omitempty"`
+	Quote_Uniq_Id_Conv   string      `json:"quote_uniq_id_conv,omitempty"`
+	Tracking_Number      string      `json:"tracking_number,omitempty"`
+	Converted_Details    string      `json:"converted_details,omitempty"`
+	Order_Token          string      `json:"order_token,omitempty"`
+	CD_Dispatch_Id       string      `json:"cd_dispatch_id,omitempty"`
+	CD_Dispatch_Status   string      `json:"cd_dispatch_status,omitempty"`
+	User_Order_Id        string      `json:"user_order_id,omitempty"`
+	Automate             string      `json:"automate,omitempty"`
+	Driver_Id            string      `json:"driver_id,omitempty"`
+	Carrier_Id           string      `json:"carrier_id,omitempty"`
+	Driver_Signature     string      `json:"driver_signature,omitempty"`
+	Automation_Id        string      `json:"automation_id,omitempty"`
+	Automation_Status    string      `json:"automation_status,omitempty"`
+	Tags                 interface{} `json:"tags,omitempty"`
+	Dates_Created        string      `json:"dates_created,omitempty"`
+	Shpr_Shipper_Id      string      `json:"shpr_shipper_id,omitempty"`
+	Dispatched_To        string      `json:"dispatched_to,omitempty"`
+	P_Terminal_Id        string      `json:"p_terminal_id,omitempty"`
+	D_Terminal_Id        string      `json:"d_terminal_id,omitempty"`
+	Referral_Id          string      `json:"referral_id,omitempty"`
 }
 
 type ListOrdersResponse struct {
@@ -130,6 +131,7 @@ type UpdateOrderParams struct {
 	UpdateField  string
 	UpdateValues []interface{}
 	Where        string
+	Must_Update  string
 }
 
 type OrderIssue struct {
@@ -138,4 +140,39 @@ type OrderIssue struct {
 	Type     string `json:"type"`
 	Notes    string `json:"notes"`
 	Added_By string `json:"added_by"`
+}
+
+type UpdateOrderFiledsParams struct {
+	Tx              *sql.Tx
+	Company_Id      int
+	User_Id         int
+	View_User       string
+	Order_Id        int
+	Order_Uniq_Id   string
+	Referral        string
+	Shipper         string
+	Pickup          string
+	Drop_Off        string
+	Car_Run         string
+	Ship_Via        string
+	No_Notes_From   int //use json_set
+	Changed_Details string
+	Called_From     string
+	Agent_Name      string
+	Resources       string
+
+	/** Update For Internal Only Starts **/
+	Dates            string //Has move_on, load_date, delivery_date //So use use json_set
+	Load_On          string
+	Deliver_On       string
+	Tags             string
+	Dispatch_Details string
+	Payments         string
+	/** Update For Internal Only Ends **/
+
+	Vehicles             string
+	Vehicle_Info_Changed string
+	Tariff_Changed       string
+	Old_Tariff           string
+	New_Tariff           string
 }

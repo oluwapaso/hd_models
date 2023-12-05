@@ -6,11 +6,12 @@ const (
 	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info," +
 		"time_zone,email,website,mc_number,cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_token_b_t," +
 		"company_logo,company_description,bcc_address,departments_info,date_created,account_status,subscription_info," +
-		"api_key,sandbox_api_key,settings_version,call_and_sms"
+		"api_key,sandbox_api_key,settings_version,call_and_sms,apps_and_tools"
 	DefaultSettingsFeild cols = "settings_id,company_id,new_lead_num,new_quote_num,new_order_num,lead_priority,required_deposit," +
 		"required_type,first_qt_flw_up,quote_expire,asumd_delivered,ass_unvrifd_orders,remove_listing,issue_days,issue_mode,log_out," +
-		"carrier_paymt_trm,carrier_paymt_begin,carrier_paymt_method,order_terms,dispatch_terms,quote_details_info,endpoints,deal_tags," +
-		"payment_markup,request_for,payment_option,request_type,auto_lock,sendgrid_api_key,thank_you,tracking_script,hotjar_script," +
+		"carrier_paymt_trm,carrier_paymt_begin,carrier_paymt_method,order_terms,dispatch_terms,order_terms_last_update," +
+		"dispatch_terms_last_update,quote_details_info,endpoints,deal_tags," +
+		"payment_markup,request_for,payment_option,request_type,auto_lock,stripe_info,sendgrid_api_key,thank_you,tracking_script,hotjar_script," +
 		"livechat_script,auto_quote,auto_quote_formula,notify_before_pickup,driver_before_temp,shipper_before_temp,notify_on_pickup," +
 		"driver_on_temp,shipper_on_temp,system_sent_email,auto_responder_sett,auto_responder_body,return_url_pg_header," +
 		"return_url_pg_subheader,return_url_pg_body,default_mailer,external_form_bg_image"
@@ -80,7 +81,7 @@ const (
 		"vehicles"
 
 	OrdersField cols = "order_id,order_uniq_id,company_id,dates,mode,car_run,ship_via,assigned_to,assigned_to_info,original_assigned_to," +
-		"source,source_type,source_id,referral,payments,shipper,origin,destination,vehicles,load_on,deliver_on,posted_board,hdesk_post_id," +
+		"source,source_type,source_id,referral,payments,shipper,origin,destination,vehicles,load_on,deliver_on,posted_board,hdesk_disp_token," +
 		"dispatch_details,status,type,resolve_issue_to,original_email,quote_id_converted,quote_uniq_id_conv,tracking_number,converted_details," +
 		"order_token,cd_dispatch_id,cd_dispatch_status,user_order_id,automate,driver_id,carrier_id,shipper_signature,driver_signature," +
 		"subscribed_drips,automation_id,automation_status,tags,item_counts,issues,dates_created,shpr_shipper_id,dispatched_to,p_terminal_id," +

@@ -11,14 +11,15 @@ type OpenBalanceParams struct {
 }
 
 type LoadPaymentsParams struct {
-	Search_Type string
-	Company_Id  int
-	Item_Type   string
-	Item_Id     int
-	Fields      string
-	TypeQuery   string
-	TypeValues  string
-	Tx          *sql.Tx
+	Search_Type       string
+	Company_Id        int
+	Item_Type         string
+	Item_Id           int
+	Fields            string
+	TypeQuery         string
+	TypeValues        string
+	Tx                *sql.Tx
+	LoadReportsParams //Used in reports service
 }
 
 type LoadSinglePaymentParams struct {
@@ -62,6 +63,7 @@ type AddPaymentsParams struct {
 	Order_Unique_Id     string
 	Refrence_No         string
 	Company_Id          string
+	Agent_Id            int
 	Date_Received       string
 	Payment_From_To     string
 	Amount              float64
@@ -87,6 +89,7 @@ type PaymentList struct {
 	Item_Type           string `json:"item_type"`
 	Item_Id             string `json:"item_id"`
 	Company_Id          string `json:"company_id"`
+	Agent_Id            string `json:"agent_id"`
 	Date_Received       string `json:"date_received"`
 	Payment_From_To     string `json:"payment_from_to"`
 	Amount              string `json:"amount"`
@@ -103,4 +106,5 @@ type PaymentList struct {
 	Notes               string `json:"notes"`
 	Receipt_Link        string `json:"receipt_link"`
 	Entered_By          string `json:"entered_by"`
+	Item_Unique_Id      string `json:"item_unique_id"`
 }

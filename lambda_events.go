@@ -101,3 +101,7 @@ type Delete_Src_Emails_Error struct {
 	Message      string `json:"message"`
 	Source_Email string `json:"source_email"`
 }
+
+type Page_PDF_Event struct {
+	Page_Link string `json:"page_link"`
+}
