@@ -53,8 +53,11 @@ const (
 	MessagesField cols = "message_id,agent_id,company_id,preview,contact_email,contact_phone,contact_name,contact_type,has_thread,status," +
 		"new_messages,last_unique_id,last_message_date"
 
+	//MessagesThreadField cols = "thread_id,message_id,unique_id,message_type,agent_id,deal_type,deal_id,company_id,contact_name," +
+	//"forwarding_email,send_from,send_to,subject,message_body,date,sent_by,status,outgoing_mail_status,outgoing_mail_info"
 	MessagesThreadField cols = "thread_id,message_id,unique_id,message_type,agent_id,deal_type,deal_id,company_id,contact_name," +
-		"forwarding_email,send_from,send_to,subject,message_body,date,sent_by,status,outgoing_mail_status,outgoing_mail_info"
+		"contact_type,forwarding_email,send_from,send_to,subject,message_body,attachments,date,last_send_attempt,sent_by,status," +
+		"outgoing_mail_status,outgoing_mail_info"
 
 	CallHistoryField cols = "call_history_id,agent_id,company_id,RecordingSid,RecordingUrl,RecordingStatus,CallSid,RecordingStartTime," +
 		"AccountSid,RecordingDuration,FromNumbr,ToNumbr,item,item_id,date"
@@ -89,4 +92,14 @@ const (
 
 	ImportedDealFilesField cols = "can_start_import,data_headers,data_rows,data_type,date_added,file_location,import_id,imported," +
 		"imported_data,rejected_leads,total_file_data,uploaded_by"
+
+	Brokers_error_logField cols = "affected_username,agent_id,category,company_id,complex_message,date,error_id,item_id,item_type," +
+		"log_for_system,message_displayed,more_info,possible_error,possible_solution,refrence_id,simple_message,status,type"
+
+	TasksField cols = "added_by,agent_id,company_id,date,item_id,item_type,priority,status,task_id,todo"
+
+	Deal_historyField cols = "history_id,company_id,item_type,item_id,item_unique_id,history_type,date_updated,updated_by,message," +
+		"changes_made"
+
+	NotesField cols = "note_id,company_id,item_type,note_type,item_id,note,date,agent_id,added_by"
 )

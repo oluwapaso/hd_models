@@ -32,3 +32,11 @@ type UpdateDealFilesParams struct {
 	UpdateValues []interface{}
 	Where        string
 }
+
+type UpdateFileParams struct {
+	File_Name  string
+	File_Type  string
+	File_Id    int
+	Company_Id int
+	Tx         *sql.Tx
+}

@@ -307,3 +307,11 @@ type GetItemCountsParams struct {
 	Item_Id    int
 	Company_Id int
 }
+
+type UpdateCountParams struct {
+	Item_Type  string
+	Item_Id    int
+	Company_Id int
+	Field      string
+	Value      string
+}

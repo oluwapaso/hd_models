@@ -151,3 +151,11 @@ type UpdateMsgThreadParams struct {
 	UpdateValues []interface{}
 	Where        string
 }
+
+type ListsDealThreadsParams struct {
+	Company_Id int
+	Fields     string
+	Item_Type  string
+	Item_Id    int
+	Limit      int
+}

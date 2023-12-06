@@ -30,3 +30,10 @@ type AddHistoryParams struct {
 	Updated_By     string `json:"updated_by"`
 	Message        string `json:"message"`
 }
+
+type ListsDealHistoryParams struct {
+	Company_Id int
+	Fields     string
+	Item_Type  string
+	Item_Id    string
+}

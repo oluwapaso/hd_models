@@ -33,3 +33,33 @@ type AddNotesParams struct {
 	Added_By           string `json:"added_by"`
 	Update_Deals_Count string `json:"update_deals_count"`
 }
+
+type ListsDealNotesParams struct {
+	Company_Id int
+	Fields     string
+	Item_Type  string
+	Item_Id    string
+	Note_Type  string
+}
+
+type AddNoteParams struct {
+	Company_Id string
+	Item_Id    int
+	Item_Type  string
+	Date       string
+	Agent_Id   int
+	Note_Type  string
+	Notes      string
+	Agent_Name string
+	Tx         *sql.Tx
+}
+
+type DeleteNoteParams struct {
+	Company_Id string
+	Item_Id    int
+	Item_Type  string
+	Note_Type  string
+	Note_Id    int
+	Agent_Id   int
+	Tx         *sql.Tx
+}
