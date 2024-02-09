@@ -23,5 +23,5 @@ type Auto_Quote_Formular struct {
 }
 
 type TripPriceParams struct {
-	AutoQuoteFormular string `json:"auto_quote_formular"`
+	AutoQuoteFormular Auto_Quote_Formular
 }
