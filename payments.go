@@ -82,6 +82,31 @@ type AddPaymentsParams struct {
 	Entered_By          string
 }
 
+type AddStripePaymentsParams struct {
+	Item_Type           string
+	Item_Id             int
+	Item_Unique_Id      string
+	Refrence_No         string
+	Company_Id          string
+	Agent_Id            int
+	Date_Received       string
+	Payment_From_To     string
+	Amount              float64
+	Deposit_Method      string
+	Deposit_Type        string
+	CC_Last_Digit       int
+	CC_Type             string
+	Other_CC_Type       string
+	CC_Expiration_Month string
+	CC_Expiration_Year  string
+	Authorization_Code  string
+	Check_Number        string
+	Transaction_Id      string
+	Notes               string
+	Receipt_Link        string
+	Entered_By          string
+}
+
 type PaymentList struct {
 	Payment_Id          int    `json:"payment_id"`
 	Refrence_No         string `json:"refrence_no"`

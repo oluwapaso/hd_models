@@ -192,6 +192,7 @@ type LoadContactFileParams struct {
 	Page_Size    int
 	Wg           *sync.WaitGroup
 	Ch           chan interface{}
+	Tx           *sql.Tx
 }
 
 type ContactsFilesResp struct {
@@ -235,4 +236,30 @@ type FormContactParams struct {
 	Driver_Id    string
 	Carrier_Id   string
 	Contact_Id   string
+}
+
+type CheckShipperSubParams struct {
+	Company_Id    int
+	Shipper_Email string
+}
+
+type ContactSearchParams struct {
+	Company_Id       int
+	Account_Type     string
+	Select_Fields    string
+	Keyword          string
+	Dispatch_Through string
+	City             string
+	State            string
+	Zip              string
+}
+
+type ContactLists struct {
+	Account_Id   int         `json:"account_id"`
+	Account_UId  string      `json:"account_uid"`
+	Account_Type string      `json:"account_type"`
+	Fullname     string      `json:"fullname"`
+	Email        string      `json:"email"`
+	Company_Name string      `json:"company_name"`
+	Contact_Info interface{} `json:"contact_info"`
 }

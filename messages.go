@@ -42,6 +42,7 @@ type MessageThreads struct {
 	Status               string         `json:"status,omitempty"`
 	Outgoing_mail_status string         `json:"outgoing_mail_status,omitempty"`
 	Outgoing_mail_info   sql.NullString `json:"outgoing_mail_info,omitempty"`
+	Batch_UID            string         `json:"batch_uid,omitempty"`
 }
 
 type EmailQueues struct {
@@ -81,6 +82,7 @@ type AddEmailToMessages struct {
 	Body                     string `json:"body"`
 	Deal_Type                string `json:"deal_type"` //None
 	Deal_Id                  int    `json:"deal_id"`
+	Deal_Unique_Id           string `json:"deal_unique_id"`
 	Tracking_Id              int    `json:"tracking_id"`
 	Template_Id              int    `json:"template_id"`
 	Composer                 string `json:"composer"`        //none
@@ -96,6 +98,7 @@ type AddEmailToMessages struct {
 	Agent_Forwarding_Address string `json:"agent_forwarding_address"`
 	Status                   string `json:"status"`  //Delivered
 	Sent_by                  string `json:"sent_by"` //Agent
+	Batch_UID                string `json:"batch_uid"`
 }
 
 type AddSMSToMessages struct {
@@ -107,6 +110,7 @@ type AddSMSToMessages struct {
 	Body                     string `json:"body"`
 	Deal_Type                string `json:"deal_type"` //None
 	Deal_Id                  int    `json:"deal_id"`
+	Deal_Unique_Id           string `json:"deal_unique_id"`
 	Template_Id              int    `json:"template_id"`
 	Composer                 string `json:"composer"` //none
 	Composer_Msg_Id          string `json:"composer_msg_id"`
@@ -118,6 +122,16 @@ type AddSMSToMessages struct {
 	Agent_Forwarding_Address string `json:"agent_forwarding_address"`
 	Status                   string `json:"status"`  //Delivered
 	Sent_by                  string `json:"sent_by"` //Agent
+}
+
+type AddClientMsgInfoParams struct {
+	Company_Id           string `json:"company_id"`
+	Agent_Id             int    `json:"agent_id"`
+	Contact_Email        string `json:"contact_email"`
+	Contact_Phone_1      string `json:"contact_phone_1"`
+	Contact_Phone_2      string `json:"contact_phone_2"`
+	Contact_Name         string `json:"contact_name"`
+	Contact_Account_Type string `json:"contact_accn_type"`
 }
 
 type GetOrAddClientMsgInfoParams struct {
@@ -142,7 +156,19 @@ type AddEmailQueueParams struct {
 	To_Email     string `json:"to_email"`
 	To_Name      string `json:"to_name"`
 	Notify       string `json:"notify"`
+	More_Info    string `json:"more_info"`
 	Expires_On   string `json:"expires_on"`
+}
+
+type AddSMSQueueParams struct {
+	Type        string `json:"type"`
+	Company_Id  int    `json:"company_id"`
+	Agent_Id    int    `json:"agent_id"`
+	Agent_Name  string `json:"agent_name"`
+	Body        string `json:"body"`
+	From_Number string `json:"from_number"`
+	To_Number   string `json:"to_number"`
+	More_Info   string `json:"more_info"`
 }
 
 type UpdateMsgThreadParams struct {
@@ -158,4 +184,181 @@ type ListsDealThreadsParams struct {
 	Item_Type  string
 	Item_Id    int
 	Limit      int
+}
+
+type GetEmailReportsParams struct {
+	Company_Id   int
+	View_Mode    string
+	View_User_Id int
+	Item_Type    string
+	Batch_UID    string
+	Fields       string
+	StartFrom    int
+	Limit        int
+}
+
+type ListMessagesParams struct {
+	Company_Id  int
+	Agent_Id    int
+	Filter_Type string
+	Fields      string
+	Search_For  string
+	Start_From  int
+	Limit       int
+}
+
+type UpdateMsgStatusParams struct {
+	Company_Id  int
+	Agent_Id    int
+	Status      string
+	Message_IDs string
+	Tx          *sql.Tx
+}
+
+type ListsMsgThreadsParams struct {
+	Company_Id int
+	Agent_Id   int
+	Fields     string
+	Message_Id int
+	Start_From string
+	Limit      int
+}
+
+type AddBatchEmailParams struct {
+	Company_Id int
+	Agent_Id   int
+	Batch_UID  string
+	Subject    string
+	Mail_Info  string
+	Date       string
+	Tx         *sql.Tx
+}
+
+type LoadSingleThreadMsgParams struct {
+	Company_Id  int
+	Load_Type   string
+	Tracking_Id int
+	Fields      string
+}
+
+type UpdateThreadOpensParams struct {
+	Update_Type           string
+	Company_Id            int
+	Tracking_Id           int
+	Thread_Id             int
+	New_Opens             int
+	First_Open_Date       string
+	Last_Open_Date        string
+	Last_Unique_Open_Date string
+	Tx                    *sql.Tx
+}
+
+type UpdateBatchOpensParams struct {
+	Update_Type           string
+	Company_Id            int
+	Batch_Id              int
+	New_Opens             int
+	Last_Open_Date        string
+	Last_Unique_Open_Date string
+	Tx                    *sql.Tx
+}
+
+type UpdateTempOpensParams struct {
+	Update_Type           string
+	Company_Id            int
+	Temp_Id               int
+	New_Opens             int
+	Last_Open_Date        string
+	Last_Unique_Open_Date string
+	Tx                    *sql.Tx
+}
+
+type UpdateThreadClicksParams struct {
+	Update_Type            string
+	Company_Id             int
+	Tracking_Id            int
+	Thread_Id              int
+	New_Clicks             int
+	Last_Click_Date        string
+	Last_Unique_Click_Date string
+	Tx                     *sql.Tx
+}
+
+type UpdateBatchClicksParams struct {
+	Update_Type            string
+	Company_Id             int
+	Batch_Id               int
+	New_Clicks             int
+	Last_Click_Date        string
+	Last_Unique_CLick_Date string
+	Tx                     *sql.Tx
+}
+
+type UpdateTempClicksParams struct {
+	Update_Type            string
+	Company_Id             int
+	Temp_Id                int
+	New_Cicks              int
+	Last_Click_Date        string
+	Last_Unique_Click_Date string
+	Tx                     *sql.Tx
+}
+
+type AddForwardingEmailParams struct {
+	Company_Id int
+	Agent_Id   int
+	Forwarder  string
+	Tx         *sql.Tx
+}
+
+type CheckMsgParams struct {
+	Check_By    string
+	Company_Id  int
+	Agent_Id    int
+	From_Email  string
+	From_Number string
+	Fields      string
+}
+
+type CheckExistingThrdParams struct {
+	Check_Type         string
+	Company_Id         int
+	Agent_Id           int
+	Unique_Id          string
+	Forwarding_Address string
+}
+
+type AddMsgToThreadParams struct {
+	Message_Type       string
+	Message_Id         string
+	Unique_Id          string
+	Company_Id         int
+	Agent_Id           int
+	Contact_Name       string
+	Forwarding_Address string
+	From_Email         string
+	To_Email           string
+	From_Number        string
+	To_Number          string
+	Subject            string
+	Body               string
+	Date               string
+	Item_Id            int
+	Item_UID           string
+	Item_Type          string
+	Contact_Type       string
+	Tx                 *sql.Tx
+}
+
+type UpdateMsgParams struct {
+	Update_Type        string
+	Message_Id         string
+	Unique_Id          string
+	Contact_Name       string
+	Forwarding_Address string
+	Subject            string
+	Preview            string
+	New_Msg            int
+	Date               string
+	Tx                 *sql.Tx
 }

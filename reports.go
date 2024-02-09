@@ -2,7 +2,7 @@ package models
 
 import "sync"
 
-type AddExpensesParams struct {
+type AddConstExpensesParams struct {
 	Company_Id   int
 	Name         string
 	Amount       string
@@ -40,6 +40,8 @@ type LoadReportsParams struct {
 
 type DataCountsResponse struct {
 	PendingTasks             interface{} `json:"pending_tasks"`
+	CompletedTasks           interface{} `json:"completed_tasks"`
+	TerminatedTasks          interface{} `json:"terminated_tasks"`
 	TasksToday               interface{} `json:"tasks_today"`
 	ActiveLeads              interface{} `json:"active_leads"`
 	ReceivedLeads            interface{} `json:"received_leads"`
@@ -66,6 +68,8 @@ type DataCountsResponse struct {
 	ErroredEmails            interface{} `json:"errored_emails"`
 	UniqueEmailOpens         interface{} `json:"unique_email_opens"`
 	UniqueEmailClicks        interface{} `json:"unique_email_clicks"`
+	TotalEmailOpens          interface{} `json:"total_email_opens"`
+	TotalEmailClicks         interface{} `json:"total_email_clicks"`
 	SentSMS                  interface{} `json:"sent_sms"`
 	SentSMSViaQueue          interface{} `json:"sent_sms_via_queue"`
 }
@@ -122,6 +126,7 @@ type CommmonDealsReportData struct {
 	TotalProfitMargin         float64 `json:"all_profit_margin"`
 	DispOrderTotalTariff      float64 `json:"all_total_tariff"`
 	DispOrderTotalCarrierPay  float64 `json:"all_total_carrier_pay"`
+	DispOrderTotalBrokersFee  float64 `json:"all_total_broker_fee"`
 	DispOrderTotalGrossProfit float64 `json:"all_gross_profit"`
 	TotalAvrgProfitPerLead    float64 `json:"all_avg_profit_per_lead"`
 }
@@ -160,6 +165,14 @@ type PayableRcvbleDataResponse struct {
 	TotalPaymentsReceived interface{} `json:"total_payment_rcvd"`
 }
 
+type PaymentsAndExpensesDataResponse struct {
+	PlanPayments     interface{} `json:"plan_payments"`
+	CreditsPayments  interface{} `json:"credits_payments"`
+	AgentsPayments   interface{} `json:"agents_payments"`
+	MonthlyExpenses  interface{} `json:"monthly_expenses"`
+	ConstantExpenses interface{} `json:"constant_expenses"`
+}
+
 type LoadReportResponse struct {
 	DataCountsResponse       interface{} `json:"data_counts"`
 	PaymentsDataResponse     interface{} `json:"payments_data"`
@@ -172,4 +185,34 @@ type LoadReportResponse struct {
 	QuotesData               interface{} `json:"quotes_data"`
 	PayableReceivableData    interface{} `json:"payable_recievable_data"`
 	PayableReceivableLists   interface{} `json:"payable_recievable_lists"`
+	HD_Payments_And_Expenses interface{} `json:"hd_payments_and_expenses"`
+}
+
+type AddMonthlyExpensesParams struct {
+	Company_Id   int
+	Name         string
+	Amount       string
+	Descriptions string
+	Date         string
+}
+
+type ListMonthlyExpensesParams struct {
+	Company_Id int
+	StartFrom  int
+	Limit      int
+	Year       string
+	Month      string
+}
+
+type MonthlyExpensesList struct {
+	Expenses_Id int    `json:"expenses_id"`
+	Company_Id  int    `json:"company_id"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Amount      string `json:"amount"`
+	Date        string `json:"date"`
+}
+
+type TotalConstExpensesParams struct {
+	Company_Id int
 }

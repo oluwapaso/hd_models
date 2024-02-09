@@ -99,3 +99,32 @@ type ImportedStatusResp struct {
 	RepoRes RepoResponse
 	Data    ImportedStatus
 }
+
+type LoadPreviousImportsParams struct {
+	Fields      string
+	Company_Id  int
+	Import_Type string
+	StartFrom   int
+	Limit       int
+}
+
+type ImportedFileInfoParams struct {
+	Company_Id int
+	File_Id    int
+	Fields     string
+}
+
+type ImportedFileErrorsParams struct {
+	Fields     string
+	Company_Id int
+	File_Id    int
+	StartFrom  int
+	Limit      int
+}
+
+type StartImportParams struct {
+	Company_Id  int
+	File_Id     int
+	Data_Header string
+	Tx          *sql.Tx
+}

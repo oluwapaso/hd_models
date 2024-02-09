@@ -1,5 +1,7 @@
 package models
 
+import "database/sql"
+
 type PlansLists struct {
 	Plan_Id    int         `json:"plan_id"`
 	Name       string      `json:"plan_name"`
@@ -44,4 +46,10 @@ type BuyCreditsParams struct {
 	TrxRef        string
 	Status        string
 	Total_Credits int
+}
+
+type UpdateSubStatusParams struct {
+	Company_Id int
+	Status     string
+	Tx         *sql.Tx
 }

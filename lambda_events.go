@@ -22,6 +22,7 @@ type MailerEvent struct {
 	Agent_Id      int    `json:"agent_id"`
 	Deal_Type     string `json:"deal_type"`
 	Deal_Id       int    `json:"deal_id"`
+	Batch_UID     string `json:"batch_uid"`
 }
 
 type SMSEvent struct {
@@ -63,6 +64,7 @@ type LambdaSendEmailResp struct {
 	Agent_Id   int    `json:"agent_id,omitempty"`
 	Deal_Type  string `json:"deal_type,omitempty"`
 	Deal_Id    int    `json:"deal_id,omitempty"`
+	Batch_UID  string `json:"batch_uid,omitempty"`
 }
 
 type LambdaSendSMSResp struct {
@@ -83,6 +85,7 @@ type LambdaInvokeOutput struct {
 	Agent_Id    int    `json:"agent_id,omitempty"`
 	Deal_Type   string `json:"deal_type,omitempty"`
 	Deal_Id     int    `json:"deal_id,omitempty"`
+	Batch_UID   string `json:"batch_uid"`
 }
 
 type IMAP_Event struct {
@@ -104,4 +107,17 @@ type Delete_Src_Emails_Error struct {
 
 type Page_PDF_Event struct {
 	Page_Link string `json:"page_link"`
+}
+
+type CD_Lambda_Event struct {
+	Company_Id        int    `json:"company_id"`
+	Agent_Id          int    `json:"agent_id"`
+	Resource          string `json:"resource"`
+	CD_Username       string `json:"cd_username"`
+	CD_Password       string `json:"cd_password"`
+	CD_Search_Cookies string `json:"cd_search_cookies"`
+	CD_Cookies        string `json:"cd_cookies"`
+	CD_Token_B_T      string `json:"cd_token_bt"`
+	Resource_URL      string `json:"resource_url"`
+	TripPriceParams   TripPriceParams
 }

@@ -29,6 +29,7 @@ type AddHistoryParams struct {
 	Date_Updated   string `json:"date_updated"`
 	Updated_By     string `json:"updated_by"`
 	Message        string `json:"message"`
+	Changes_Made   string `json:"Changes_Made"`
 }
 
 type ListsDealHistoryParams struct {

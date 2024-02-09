@@ -49,6 +49,14 @@ type QuoteLists struct {
 
 type QuoteDetails struct {
 	QuoteLists
+	Source_Id       string      `json:"source_id,omitempty"`
+	Referral        string      `json:"referral,omitempty"`
+	Original_Email  string      `json:"original_email,omitempty"`
+	Quote_Token     string      `json:"quote_token,omitempty"`
+	Tags            interface{} `json:"tags,omitempty"`
+	Dates_Created   string      `json:"dates_created,omitempty"`
+	Shpr_Shipper_Id string      `json:"shpr_shipper_id,omitempty"`
+	Referral_Id     string      `json:"referral_id,omitempty"`
 	//Not finished yet 11/22/2023
 }
 
@@ -60,7 +68,7 @@ type UpdateQuoteParams struct {
 	Must_Update  string
 }
 
-type UpdateQuoteFiledsParams struct {
+type UpdateQuoteFieldsParams struct {
 	Tx              *sql.Tx
 	Company_Id      int
 	User_Id         int
@@ -92,4 +100,103 @@ type UpdateQuoteFiledsParams struct {
 	Tariff_Changed       string
 	Old_Tariff           string
 	New_Tariff           string
+}
+
+type ListQuotesParams struct {
+	Type            string
+	Fields          string
+	InitQuery       string
+	AssignedTo      string
+	TagQuery        string
+	SearchQuery     string
+	Params          []interface{}
+	TagParams       []interface{}
+	SearchParams    []interface{}
+	StartFrom       int
+	Limit           int
+	Order_By        string
+	Curr_Quote_Id   string
+	Filter_Field    string
+	Filter_Val      string
+	Next_Filter     string
+	Previous_Filter string
+	Sort_Dir        string
+}
+
+type ReassignQuotesParams struct {
+	Company_Id  int
+	Quote_Ids   string
+	Reassign_To int
+	Tx          *sql.Tx
+}
+
+type UpdateQuoteStatusParams struct {
+	Company_Id int
+	Quote_Ids  string
+	Status     string
+	Tx         *sql.Tx
+}
+
+type UpdateQuoteExpiryDateParams struct {
+	Company_Id int
+	Quote_Ids  string
+	Expire_On  string
+	Tx         *sql.Tx
+}
+
+type UpdateFupedQtsParams struct {
+	Company_Id         int
+	Quote_Ids          string
+	Next_Followup_Date string
+	Last_Bomb          string
+	Tx                 *sql.Tx
+}
+
+type UpdateQtFupInfoParams struct {
+	Company_Id int
+	Quote_Id   int
+	DbCon      *sql.DB
+}
+
+type AddNewQuoteParams struct {
+	Tx          *sql.Tx
+	Company_Id  int
+	User_Id     int
+	View_User   string
+	Referral    string
+	Shipper     string
+	Pickup      string
+	Drop_Off    string
+	Car_Run     string
+	Ship_Via    string
+	Item_Counts string
+	Agent_Name  string
+	Vehicles    string
+
+	/** Update For Internal Only Starts **/
+	Dates    string //Has move_on //So use use json_set
+	Tags     string
+	Payments string
+	/** Update For Internal Only Ends **/
+
+	Broker_Comp_Name  string
+	Broker_Comp_Email string
+	Source_Id         int
+	Source_Name       string
+	Source_Type       string
+	Lead_Medium       string
+	Duplicate_Info    string
+	Follow_Up_Info    string
+	Original_Email    string
+	Seen_By_Agent     string
+}
+
+type UpdateNewQuoteParams struct {
+	Company_Id    int
+	User_Id       int
+	Quote_Id      int
+	Quote_Uniq_Id string
+	Item_Token    string
+	Payments      string
+	Tx            *sql.Tx
 }

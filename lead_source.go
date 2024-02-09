@@ -45,6 +45,14 @@ type LeadSourceListsParams struct {
 	Company_Id int
 	Fields     string
 	Order_By   string
+	StartFrom  int
+	Limit      int
+}
+
+type LoadSingleLeadSourceParams struct {
+	Company_Id     int
+	Fields         string
+	Lead_Source_Id int
 }
 
 type CountLeadSourceDealsParams struct {
@@ -99,4 +107,156 @@ type LeadSourceReportData struct {
 	Lead_Source_Status string  `json:"status"`
 	Total_Leads_Amnt   float64 `json:"total_leads_amount"`
 	DealsReportData
+}
+
+type UnsetExtrnlSRCParams struct {
+	Company_Id int
+	Tx         *sql.Tx
+}
+
+type UpdateLeadSRCParams struct {
+	Tx          *sql.Tx
+	Feild_Query string
+	Query_Value []interface{}
+	Where       string
+	Must_Update bool
+}
+
+type MappedSrcParams struct {
+	Company_Id int
+	Fields     string
+}
+
+type UpdateImportMappedStatusParams struct {
+	Company_Id     int
+	Quote_Status   string
+	Order_Status   string
+	Contact_Status string
+	Must_Update    bool
+	Tx             *sql.Tx
+}
+
+type MappedAgentParams struct {
+	Company_Id int
+	Value      string
+	Agent_Id   int
+}
+
+type MultiMappedSrcParams struct {
+	Company_Id int
+	Value      string
+	Source_Id  int
+}
+
+type GetSrcDetailsParams struct {
+	Company_Id  int
+	Fields      string
+	Lead_Medium string
+	Query_By    string
+}
+
+type AssignLeadToParams struct {
+	Company_Id    int
+	Source_Id     int
+	Shipper_Email string
+	Tx            *sql.Tx
+}
+
+type AssignLeadToResponse struct {
+	Lead_Multiples         int
+	Route_Leads            string
+	Leads_Assigned         int
+	Agent_Id               int
+	Name                   string
+	Phone                  string
+	Email                  string
+	Username               string
+	Notifications_Settings string
+	Mailer_Settings        string
+	Webmail_Settings       string
+}
+
+type UpdateAss_RR_InfoParams struct {
+	Assign_Next_Lead string
+	Leads_Assigned   int
+	Company_Id       int
+	Source_Id        int
+	Agent_Id         int
+	Tx               *sql.Tx
+}
+
+type CheckLeadSourceParam struct {
+	Company_Id   int
+	Check_By     string
+	Source_Id    int
+	Source_Email string
+}
+
+type CheckAgentAndSrcParam struct {
+	Company_Id int
+	Source_Id  int
+	Agent_Id   int
+}
+
+type CheckDistributedParam struct {
+	Company_Id int
+	Source_Id  int
+	Agent_Id   int
+}
+
+type CheckSRCDistributedParam struct {
+	Company_Id int
+	Source_Id  int
+	Tx         *sql.Tx
+}
+
+type UpSrcSettParams struct {
+	Company_Id     int
+	Source_Id      int
+	Agent_Id       int
+	Lead_Multiples int
+	Route_To       string
+	Tx             *sql.Tx
+}
+
+type AddSrcSettParams struct {
+	Company_Id     int
+	Source_Id      int
+	Agent_Id       int
+	Lead_Multiples int
+	Route_To       string
+	Tx             *sql.Tx
+}
+
+type UpdateDistributedParam struct {
+	Company_Id  int
+	Source_Id   int
+	Distributed string
+	Tx          *sql.Tx
+}
+
+type ResetPCParams struct {
+	Company_Id int
+	Tx         *sql.Tx
+}
+
+type AddLeadSrcParams struct {
+	Company_Id          int
+	Source_Email        string
+	Email_Password      string
+	API_Access_Key      string
+	Price_Per_Lead      string
+	Company_Info        string
+	Auto_Quote_Formular string
+	Settings            string
+	Tx                  *sql.Tx
+}
+
+type SetGotMailsParams struct {
+	Source_Email string
+	Tx           *sql.Tx
+}
+
+type DefaultPriceCheckerAqFormularParams struct {
+	Company_Id int
 }

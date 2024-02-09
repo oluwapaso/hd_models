@@ -32,18 +32,24 @@ type SyncCDOrderParams struct {
 }
 
 type ListOrdersParams struct {
-	Type         string
-	Fields       string
-	InitQuery    string
-	AssignedTo   string
-	TagQuery     string
-	SearchQuery  string
-	Params       []interface{}
-	TagParams    []interface{}
-	SearchParams []interface{}
-	StartFrom    int
-	Limit        int
-	Order_By     string
+	Type            string
+	Fields          string
+	InitQuery       string
+	AssignedTo      string
+	TagQuery        string
+	SearchQuery     string
+	Params          []interface{}
+	TagParams       []interface{}
+	SearchParams    []interface{}
+	StartFrom       int
+	Limit           int
+	Order_By        string
+	Curr_Order_Id   string
+	Filter_Field    string
+	Filter_Val      string
+	Next_Filter     string
+	Previous_Filter string
+	Sort_Dir        string
 }
 
 // Used for dynamic fetching so sql.NullString and likes will not be used here
@@ -142,7 +148,7 @@ type OrderIssue struct {
 	Added_By string `json:"added_by"`
 }
 
-type UpdateOrderFiledsParams struct {
+type UpdateOrderFieldsParams struct {
 	Tx              *sql.Tx
 	Company_Id      int
 	User_Id         int
@@ -175,4 +181,95 @@ type UpdateOrderFiledsParams struct {
 	Tariff_Changed       string
 	Old_Tariff           string
 	New_Tariff           string
+}
+
+type AddNewOrderParams struct {
+	Tx                   *sql.Tx
+	Company_Id           int
+	User_Id              int
+	Assigned_To          int
+	Assigned_To_Info     string
+	Original_Assigned_To int
+	View_User            string
+	Referral             string
+	Shipper              string
+	Pickup               string
+	Drop_Off             string
+	Car_Run              string
+	Ship_Via             string
+	Item_Counts          string
+	Agent_Name           string
+	Vehicles             string
+	Tracking_Number      string
+
+	/** Update For Internal Only Starts **/
+	Dates            string //Has move_on //So use use json_set
+	Tags             string
+	Payments         string
+	Dispatch_Details string
+	/** Update For Internal Only Ends **/
+
+	Lead_Medium    string
+	Source_Id      int
+	Source_Name    string
+	Source_Type    string
+	Original_Email string
+	Quote_Id_Conv  string
+	Quote_UId_Conv string
+	Seen_By_Agent  string
+	Mode           string
+	Load_On        string
+	Deliver_On     string
+}
+
+type UpdateNewOrderParams struct {
+	Company_Id    int
+	User_Id       int
+	Order_Id      int
+	Order_Uniq_Id string
+	Item_Token    string
+	Payments      string
+	Tx            *sql.Tx
+}
+
+type ReassignOrdersParams struct {
+	Company_Id  int
+	Order_Ids   string
+	Reassign_To int
+	Tx          *sql.Tx
+}
+
+type UpdateOrderStatusParams struct {
+	Company_Id int
+	Order_Ids  string
+	Status     string
+	Tx         *sql.Tx
+}
+
+type MarkAsIssueParams struct {
+	Company_Id       int
+	Order_Id         int
+	Id               int64
+	Issues_Type      string
+	Date             string
+	Internal_Notes   string
+	Added_By         string
+	Issue            string
+	Resolve_Issue_To string
+	Tx               *sql.Tx
+}
+
+type ResolveIssueParams struct {
+	Company_Id int
+	Status     string
+	Issues     string
+	Order_Ids  string
+	Tx         *sql.Tx
+}
+
+type UpdateReservationParams struct {
+	Reservation_Type string
+	Company_Id       int
+	Order_Id         int
+	Tx               *sql.Tx
 }

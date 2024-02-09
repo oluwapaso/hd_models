@@ -1,6 +1,9 @@
 package models
 
-import "database/sql"
+import (
+	"database/sql"
+	"sync"
+)
 
 type CommonDealFields struct {
 	Company_id           int            `json:"company_id"`
@@ -108,6 +111,14 @@ type Vehicles struct {
 	Full_vehicle    string `json:"full_vehicle"`
 }
 
+type Issues struct {
+	Id       int
+	Date     string
+	Type     string
+	Notes    string
+	Added_By string
+}
+
 type ItemTypeCountsParams struct {
 	Company_Id string
 	Item_Id    int
@@ -145,9 +156,18 @@ type DealVehicles struct {
 }
 
 type DeleteDealsParams struct {
-	Tx        *sql.Tx
-	Item_Type string
-	Item_Id   []interface{}
+	Tx         *sql.Tx
+	Item_Type  string
+	Item_Id    []interface{}
+	Company_Id int
+}
+
+type DeleteDealsExtrasParams struct {
+	Tx          *sql.Tx
+	Extral_Type string
+	Item_Type   string
+	Item_Id     []interface{}
+	Company_Id  int
 }
 
 type ChangedDtlsParams struct {
@@ -314,4 +334,136 @@ type UpdateCountParams struct {
 	Company_Id int
 	Field      string
 	Value      string
+}
+
+type RemoveAutomParams struct {
+	Remove_From_Leads  string
+	Remove_From_Quotes string
+	Remove_From_Orders string
+	Company_Id         int
+	Automation_Id      int
+	Tx                 *sql.Tx
+}
+
+type CountDealFilesParams struct {
+	Item_Type  string
+	Item_Id    int
+	Company_Id int
+	Tx         *sql.Tx
+}
+
+type LoadNextPrevDealsParams struct {
+	Company_Id   int
+	Agent_Id     int
+	Item_Type    string
+	Curr_Item_Id int
+	Sort_By      string
+	Sort_Dir     string
+	Wg           *sync.WaitGroup
+	Ch           chan interface{}
+}
+
+type MarkDealAsSeenParams struct {
+	Table      string
+	Field      string
+	Item_Id    string
+	Company_Id int
+	Tx         *sql.Tx
+}
+
+type UpDealPaymentJsonFieldParams struct {
+	Table      string
+	Field      string
+	Json_Field string
+	Item_Id    string
+	Company_Id int
+	Value      string
+	Tx         *sql.Tx
+}
+
+type UpDealPaymentsParams struct {
+	Table      string
+	Field      string
+	Item_Id    string
+	Company_Id int
+	Value      string
+	Tx         *sql.Tx
+}
+
+type LoadDealFieldParams struct {
+	Table      string
+	To_Sel     string
+	Qry_Field  string
+	Qry_Value  string
+	Company_Id int
+}
+
+type UpDealVehicleJsonFieldParams struct {
+	Table       string
+	Up_By_Field string
+	Extra_Col   string
+	Item_Id     string
+	Company_Id  int
+	Qry_Value   []interface{}
+	Tx          *sql.Tx
+}
+
+type AddNewVehicleParams struct {
+	Table           string
+	Up_By_Field     string
+	Item_Id         string
+	Company_Id      int
+	Num_Of_Vehicles int
+	Vehicle         string
+	Tx              *sql.Tx
+}
+
+type AddDealNotiParams struct {
+	Company_Id        int
+	Agent_Id          int
+	Deal_Type         string
+	Deal_UId          string
+	Broker_Comp_Name  string
+	Broker_Comp_Email string
+	Agent_Email       string
+	Agent_Name        string
+	Tx                *sql.Tx
+}
+
+type MarkDealAsNoneDupParams struct {
+	Company_Id int
+	Deal_Type  string
+	Deal_Ids   string
+	Tx         *sql.Tx
+}
+
+type DeleteDealsForeverParams struct {
+	Company_Id int
+	Deal_Type  string
+	Deal_Ids   string
+	Tx         *sql.Tx
+}
+
+type ContactSMSMsgDeal struct {
+	Company_Id    int
+	Contact_Phone string
+}
+
+type ContactEmailMsgDeal struct {
+	Company_Id    int
+	Email_Address string
+}
+
+type LoadDealByContactPhoneParams struct {
+	Item_Type     string
+	Search_By     string
+	Company_Id    int
+	Contact_Phone string
+}
+
+type LoadDealByContactEmailParams struct {
+	Item_Type     string
+	Search_By     string
+	Company_Id    int
+	Contact_Email string
 }

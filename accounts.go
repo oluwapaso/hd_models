@@ -53,6 +53,18 @@ type ValidateAPIKeyParams struct {
 	APP_Stage  string
 }
 
+type ValidateLeadSrcParams struct {
+	Source_Email string
+}
+type ValidateLeadSrcKeyParams struct {
+	Source_Key string
+}
+
+type ValidateAccntLevelParams struct {
+	Agent_Id   int
+	Company_Id int
+}
+
 type ReferralsListsParams struct {
 	Type         string
 	Company_Id   int
@@ -85,4 +97,34 @@ type UpdateDlftRoutingNumParams struct {
 	Company_Id   int
 	Phone_Number string
 	Tx           *sql.Tx
+}
+
+type LoadAccountInfoParams struct {
+	Load_By    string
+	Email      string
+	Account_Id int
+	Fields     string
+}
+
+type UpdateLogoParams struct {
+	Company_Id int
+	Logo       string
+	Tx         *sql.Tx
+}
+
+type UpdateExtBGParams struct {
+	Company_Id int
+	BG_Loc     string
+	Tx         *sql.Tx
+}
+
+type UpdateChargesParams struct {
+	Company_Id     int
+	New_Credit_Bal int
+	Tx             *sql.Tx
+}
+
+type AccntWithTwilioParams struct {
+	To_Number string
+	Fields    string
 }
