@@ -119,6 +119,10 @@ type CD_Lambda_Event struct {
 	CD_Cookies        string `json:"cd_cookies"`
 	CD_Token_B_T      string `json:"cd_token_bt"`
 	Resource_URL      string `json:"resource_url"`
-	TripPriceParams   TripPriceParams
-	CD_Dispatch_ID    string `json:"cd_dispatch_id"`
+
+	TripPriceParams TripPriceParams
+
+	CD_Dispatch_ID      string `json:"cd_dispatch_id"`
+	CD_Current_Status   string `json:"cd_current_status"`
+	CD_Last_Status_Sync string `json:"cd_last_status_sync"`
 }
