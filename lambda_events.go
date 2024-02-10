@@ -122,6 +122,9 @@ type CD_Lambda_Event struct {
 
 	TripPriceParams TripPriceParams
 
+	Order_Id            string `json:"order_id"`
+	Order_Unique_Id     string `json:"order_unique_id"`
+	User_Order_Id       string `json:"user_order_id"`
 	CD_Dispatch_ID      string `json:"cd_dispatch_id"`
 	CD_Current_Status   string `json:"cd_current_status"`
 	CD_Last_Status_Sync string `json:"cd_last_status_sync"`
