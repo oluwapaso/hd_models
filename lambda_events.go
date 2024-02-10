@@ -128,4 +128,7 @@ type CD_Lambda_Event struct {
 	CD_Dispatch_ID      string `json:"cd_dispatch_id"`
 	CD_Current_Status   string `json:"cd_current_status"`
 	CD_Last_Status_Sync string `json:"cd_last_status_sync"`
+
+	Keyword     string `json:"keyword"`
+	Search_Type string `json:"search_type"`
 }
