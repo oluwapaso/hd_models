@@ -120,5 +120,5 @@ type CD_Lambda_Event struct {
 	CD_Token_B_T      string `json:"cd_token_bt"`
 	Resource_URL      string `json:"resource_url"`
 	TripPriceParams   TripPriceParams
-	CD_Order_ID       string `json:"cd_order_id"`
+	CD_Dispatch_ID    string `json:"cd_dispatch_id"`
 }
