@@ -247,6 +247,7 @@ type GeneratePDF struct {
 	HD_Post_Id    string
 	Account_Id    string
 	HD_Disp_Token string
+	Order_Id      string
 }
 
 type GeneratePDFResponse struct {
