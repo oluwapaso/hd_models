@@ -273,3 +273,9 @@ type UpdateReservationParams struct {
 	Order_Id         int
 	Tx               *sql.Tx
 }
+
+type MonitorabaleOrdersParams struct {
+	Fields string
+	Now    string
+	Limit  int
+}

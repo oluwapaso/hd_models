@@ -132,4 +132,6 @@ type CD_Lambda_Event struct {
 	Cd_Carrier_Id string `json:"cd_carrier_id"`
 	Keyword       string `json:"keyword"`
 	Search_Type   string `json:"search_type"`
+
+	WaitForItem string `json:"wait_for_item"`
 }
