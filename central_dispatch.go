@@ -24,3 +24,12 @@ type Add_CD_Saved_Carrier_Params struct {
 	Fax          string
 	Tx           *sql.Tx
 }
+
+type Add_CD_Cookies_Params struct {
+	Company_Id          int
+	Cookies             string
+	Cookie_Type         string
+	Local_Storage_Value string
+	B_T                 string
+	Tx                  *sql.Tx
+}

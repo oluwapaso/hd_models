@@ -53,6 +53,12 @@ type ValidateAPIKeyParams struct {
 	APP_Stage  string
 }
 
+type ValidateWidgetKeyParams struct {
+	Account_ID string
+	Widget_Key string
+	APP_Stage  string
+}
+
 type ValidateLeadSrcParams struct {
 	Source_Email string
 }

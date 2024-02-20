@@ -18,14 +18,15 @@ type AppLists struct {
 }
 
 type ActivatePlanParams struct {
-	Company_Id     int
-	Amount         float64
-	Ref            string
-	Transaction    string
-	TrxRef         string
-	Status         string
-	Activated_Apps []interface{}
-	More_Capacity  int
+	Company_Id        int
+	Amount            float64
+	Ref               string
+	Transaction       string
+	TrxRef            string
+	Status            string
+	Activated_Apps    []interface{}
+	Activated_Widgets []interface{}
+	More_Capacity     int
 }
 
 type AddCapacityParams struct {

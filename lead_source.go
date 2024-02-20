@@ -41,23 +41,33 @@ type DeleteEmailResponse struct {
 }
 
 type LeadSourceListsParams struct {
-	Type       string
-	Company_Id int
-	Fields     string
-	Order_By   string
-	StartFrom  int
-	Limit      int
+	Type        string
+	Company_Id  int
+	Fields      string
+	Source_Type string
+	Order_By    string
+	StartFrom   int
+	Limit       int
 }
 
 type LoadSingleLeadSourceParams struct {
+	Get_Info_By    string
 	Company_Id     int
 	Fields         string
 	Lead_Source_Id int
+	API_Access_Key string
+	Item_Type      string
+	Item_Token     string
 }
 
 type CountLeadSourceDealsParams struct {
 	Source_Company_Name string
 	LoadReportsParams
+}
+
+type ListAllWidetsParams struct {
+	Company_Id int
+	Fields     string
 }
 
 type LeadSrcDispDataParams struct {
@@ -115,6 +125,14 @@ type UnsetExtrnlSRCParams struct {
 }
 
 type UpdateLeadSRCParams struct {
+	Tx          *sql.Tx
+	Feild_Query string
+	Query_Value []interface{}
+	Where       string
+	Must_Update bool
+}
+
+type UpdateLeadSRCSettParams struct {
 	Tx          *sql.Tx
 	Feild_Query string
 	Query_Value []interface{}
@@ -252,6 +270,16 @@ type AddLeadSrcParams struct {
 	Tx                  *sql.Tx
 }
 
+type AddWidgetParams struct {
+	Company_Id          int
+	API_Access_Key      string
+	Price_Per_Lead      string
+	Company_Info        string
+	Auto_Quote_Formular string
+	Settings            string
+	Tx                  *sql.Tx
+}
+
 type SetGotMailsParams struct {
 	Source_Email string
 	Tx           *sql.Tx
@@ -259,4 +287,27 @@ type SetGotMailsParams struct {
 
 type DefaultPriceCheckerAqFormularParams struct {
 	Company_Id int
+}
+
+type CheckWidgetParams struct {
+	Check_By   string
+	Widget_Key string
+}
+
+type CheckWidgetResp struct {
+	Widget_Exist     bool
+	Message          string
+	Background_Image string
+	Page_Script      string
+	Company_Id       int
+}
+
+type CheckActiveWidgets struct {
+	Company_Id int
+}
+
+type ActivateFreeWidgetParams struct {
+	Company_Id int
+	Widget_Id  int
+	Tx         *sql.Tx
 }

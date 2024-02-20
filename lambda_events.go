@@ -110,15 +110,16 @@ type Page_PDF_Event struct {
 }
 
 type CD_Lambda_Event struct {
-	Company_Id        int    `json:"company_id"`
-	Agent_Id          int    `json:"agent_id"`
-	Resource          string `json:"resource"`
-	CD_Username       string `json:"cd_username"`
-	CD_Password       string `json:"cd_password"`
-	CD_Search_Cookies string `json:"cd_search_cookies"`
-	CD_Cookies        string `json:"cd_cookies"`
-	CD_Token_B_T      string `json:"cd_token_bt"`
-	Resource_URL      string `json:"resource_url"`
+	Company_Id              int    `json:"company_id"`
+	Agent_Id                int    `json:"agent_id"`
+	Resource                string `json:"resource"`
+	CD_Username             string `json:"cd_username"`
+	CD_Password             string `json:"cd_password"`
+	CD_Search_Cookies       string `json:"cd_search_cookies"`
+	CD_Local_Storage_Values string `json:"cd_local_storage_values"`
+	CD_Cookies              string `json:"cd_cookies"`
+	CD_Token_B_T            string `json:"cd_token_bt"`
+	Resource_URL            string `json:"resource_url"`
 
 	TripPriceParams TripPriceParams
 

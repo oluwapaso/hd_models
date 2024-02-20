@@ -248,3 +248,7 @@ type AutoTemplateParams struct {
 	Fields        string
 	Template_Type string
 }
+
+type CheckPublishedAutomations struct {
+	Company_Id int
+}

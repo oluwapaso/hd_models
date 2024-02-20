@@ -4,8 +4,9 @@ type cols string
 
 const (
 	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info,time_zone,email,website,mc_number," +
-		"cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_token_b_t,call_and_sms,company_logo,company_description,bcc_address," +
-		"departments_info,date_created,account_status,subscription_info,apps_and_tools,api_key,sandbox_api_key,settings_version"
+		"cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_local_storage_values,cd_token_b_t,call_and_sms,company_logo," +
+		"company_description,bcc_address,departments_info,date_created,account_status,subscription_info,apps_and_tools,api_key," +
+		"sandbox_api_key,settings_version"
 
 	DefaultSettingsFeild cols = "settings_id,company_id,new_lead_num,new_quote_num,new_order_num,lead_priority,required_deposit," +
 		"required_type,first_qt_flw_up,quote_expire,asumd_delivered,ass_unvrifd_orders,remove_listing,issue_days,issue_mode,log_out," +
@@ -70,9 +71,10 @@ const (
 
 	Lead_sourceField cols = "source_id,company_id,source_email,api_access_key,price_per_lead,status,distributed,cron_processed,company_info," +
 		"auto_quote,autoqouote_formular,use_for_extnl_form,deflt_price_checker,automation_id,website_url,last_email_deleted,got_emails," +
-		"settings,import_mapping,thank_you_page"
+		"settings,import_mapping,thank_you_page,source_type"
 
-	Lead_source_settField cols = "settings_id,leads_source_id,company_id,agent_id,lead_multiples,assign_next_lead,leads_assigned,route_leads" //auto_quote,auto_quote_formula,use_for_extnl_form
+	Lead_source_settField cols = "settings_id,leads_source_id,company_id,agent_id,lead_multiples,assign_next_lead,leads_assigned,route_leads," +
+		"thank_you_page_header,thank_you_page_sub_header,thank_you_page_body,quote_page_body,background_image,page_script" //auto_quote,auto_quote_formula,use_for_extnl_form
 
 	LeadsField cols = "lead_id,lead_uniq_id,company_id,dates,duplicate_info,car_run,ship_via,assigned_to,assigned_to_info," +
 		"original_assigned_to,referral,shipper,origin,destination,vehicles,source,source_type,source_id,payments,type,seen_by_agent," +
