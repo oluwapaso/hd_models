@@ -137,4 +137,6 @@ type CD_Lambda_Event struct {
 	WaitForItem string `json:"wait_for_item"`
 	Save_PDF    bool   `json:"save_pdf"`
 	PDF_Name    string `json:"pdf_name"`
+
+	JsonData string `json:"json_data"`
 }
