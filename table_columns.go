@@ -3,6 +3,9 @@ package models
 type cols string
 
 const (
+	AdminField cols = "admin_id,username,fullname,call_routing_number,email,phone,tickets_multiples,crt_agents,del_agents,up_brk_accnt," +
+		"del_brk_accnt,up_prt_accnt,del_prt_accnt,process_tickets,up_sys_sett,send_batch_eml,level,status,dp_thumb,last_login,password_updated"
+
 	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info,time_zone,email,website,mc_number," +
 		"cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_local_storage_values,cd_token_b_t,call_and_sms,company_logo," +
 		"company_description,bcc_address,departments_info,date_created,account_status,subscription_info,apps_and_tools,api_key," +

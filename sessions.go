@@ -123,3 +123,11 @@ type AddNewSessionParams struct {
 	Last_Login          string
 	Tx                  *sql.Tx
 }
+
+type AddNewAdminSessionParams struct {
+	Admin_Id            int
+	Access_Token        string
+	Access_Token_expiry string
+	Last_Login          string
+	Tx                  *sql.Tx
+}

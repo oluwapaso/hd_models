@@ -260,3 +260,11 @@ type AgentsPaymentsListsParams struct {
 	Start_From int
 	Limit      int
 }
+
+type LoadAdminInfoParams struct {
+	Load_By  string
+	Email    string
+	Username string
+	Admin_Id int
+	Fields   string
+}
