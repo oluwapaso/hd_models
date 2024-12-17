@@ -3,8 +3,8 @@ package models
 type cols string
 
 const (
-	AdminField cols = "admin_id,username,fullname,call_routing_number,email,phone,tickets_multiples,crt_agents,del_agents,up_brk_accnt," +
-		"del_brk_accnt,up_prt_accnt,del_prt_accnt,process_tickets,up_sys_sett,send_batch_eml,level,status,dp_thumb,last_login,password_updated"
+	AdminField cols = "admin_id,username,fullname,email,phone,tickets_multiples,crt_agents,del_agents,up_brk_accnt,del_brk_accnt," +
+		"up_prt_accnt,del_prt_accnt,process_tickets,up_sys_sett,send_batch_eml,level,status,dp_thumb,last_login,password,password_updated"
 
 	AccountsFeild cols = "account_id,company_unique_id,created_by,company_name,company_suffix,contact_info,time_zone,email,website,mc_number," +
 		"cd_uname,cd_upasswd,cd_uid,cd_cookies,cd_search_cookies,cd_local_storage_values,cd_token_b_t,call_and_sms,company_logo," +
@@ -127,7 +127,8 @@ const (
 	System_settingsField cols = "settings_id,sendgrid_api,square_access_token,square_app_id,twilio_account_sid,twilio_auth_token," +
 		"free_trial_number,max_trial_sms,max_trial_calls,max_professional_sms,max_professional_calls,max_premium_sms,max_premium_calls," +
 		"max_enterprise_sms,max_enterprise_calls,email_header,email_footer,file_version,last_updated_by,last_update_date,extra_calls_price," +
-		"extra_sms_price,call_per_min,sms_per_page,credits_per_dollar"
+		"extra_sms_price,call_per_min,sms_per_page,credits_per_dollar,company_name,company_address_1,company_address_2,company_support_phone," +
+		"company_support_email"
 
 	AgentsPaymentsField cols = "agent_id,agent_payment_id,amount,company_id,date_received,notes,payment_method,payment_type,receipt_url," +
 		"transaction_id"

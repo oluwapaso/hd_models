@@ -3,11 +3,13 @@ package models
 import "database/sql"
 
 type SysUpdatesParams struct {
-	Company_Id int
-	Fields     string
-	StartFrom  int
-	Limit      int
-	Year       string
+	Search_Type string
+	Company_Id  int
+	Fields      string
+	StartFrom   int
+	Limit       int
+	Year        string
+	Type        string
 }
 
 type FeatureRequestsParams struct {
@@ -103,16 +105,19 @@ type TicketRespParams struct {
 type AddTicketResponseParams struct {
 	Company_Id    int
 	Agent_Id      int
+	Admin_Id      int
 	Client_Name   string
 	Message       string
 	Ticket_Id     int
 	Response_From string
+	RepliedBy     string
 	Date          string
 	Tx            *sql.Tx
 }
 
 type UpdatePingParams struct {
 	Ticket_Id int
+	RepliedBy string
 	Date      string
 	Tx        *sql.Tx
 }
@@ -129,4 +134,35 @@ type AddNewTicketParams struct {
 	Date          string
 	Ticket_Number string
 	Tx            *sql.Tx
+}
+
+type AdminTicketListsParams struct {
+	Fields    string
+	Filter_By string
+	StartFrom int
+	Limit     int
+}
+
+type UpdateTicketStatusParams struct {
+	Ticket_Id int
+	Status    string
+	Tx        *sql.Tx
+}
+
+type UpdateFeatReqStatusParams struct {
+	Request_Id int
+	Status     string
+	Tx         *sql.Tx
+}
+
+type FeaturesLookupParams struct {
+	Fields  string
+	Keyword string
+	Limit   int
+}
+
+type MergeFeatReqParams struct {
+	Request_Id int
+	Merge_To   int
+	Tx         *sql.Tx
 }

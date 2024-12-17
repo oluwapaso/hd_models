@@ -134,3 +134,13 @@ type AccntWithTwilioParams struct {
 	To_Number string
 	Fields    string
 }
+
+type ListBrokersParams struct {
+	Type      string
+	Fields    string
+	Status    string
+	Sub_Type  string
+	Keyword   string
+	StartFrom int
+	Limit     int
+}
