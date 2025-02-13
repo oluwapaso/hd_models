@@ -93,6 +93,7 @@ type AddLoginHistParams struct {
 	Agent_Id   int
 	IP_Address string
 	Date       string
+	LoginAs    string
 	Tx         *sql.Tx
 }
 

@@ -125,6 +125,7 @@ type ItemTypeCountsParams struct {
 	Item_Type  string
 	Field      string
 	Value      int
+	DbConn     *sql.DB
 }
 
 type CountsNotes struct {
@@ -467,4 +468,13 @@ type LoadDealByContactEmailParams struct {
 	Search_By     string
 	Company_Id    int
 	Contact_Email string
+}
+
+type UpdateFullVehicleParams struct {
+	Table       string
+	Item_Id     string
+	Up_By_Field string
+	Company_Id  int
+	Vehicle     string
+	Tx          *sql.Tx
 }

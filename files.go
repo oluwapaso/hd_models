@@ -19,6 +19,8 @@ type FileLists struct {
 	File_Type      string `json:"file_type"`
 	File_Loc       string `json:"file_loc"`
 	Extension      string `json:"extension"`
+	Description    string `json:"description"`
+	Date_Added     string `json:"date_added"`
 }
 
 type FileListsResponse struct {

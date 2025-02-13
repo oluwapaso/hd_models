@@ -257,8 +257,10 @@ type AgentsPaymentsListsParams struct {
 	Company_Id int
 	Agent_Id   int
 	Fields     string
-	Start_From int
-	Limit      int
+	Start_Date string
+	End_Date   string
+	// Start_From int
+	// Limit      int
 }
 
 type LoadAdminInfoParams struct {

@@ -25,10 +25,12 @@ type LeadLists struct {
 	Status               string      `json:"status"`
 	Item_Counts          interface{} `json:"item_counts"`
 	Subscribed_Drips     interface{} `json:"subscribed_drips"`
+	Seen_By_Agent        string      `json:"seen_by_agent"`
 }
 
 type LeadDetails struct {
 	LeadLists
+	Original_Email       string      `json:"original_email,omitempty"`
 	Original_Assigned_To string      `json:"original_assigned_to,omitempty"`
 	Source_Id            string      `json:"source_id,omitempty"`
 	Referral             string      `json:"referral,omitempty"`

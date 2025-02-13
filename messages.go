@@ -362,3 +362,17 @@ type UpdateMsgParams struct {
 	Date               string
 	Tx                 *sql.Tx
 }
+
+type MarkMsgAsSeenParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
+}
+
+type MarkRatesParams struct {
+	Tx           *sql.Tx
+	UpdateField  string
+	UpdateValues []interface{}
+	Where        string
+}

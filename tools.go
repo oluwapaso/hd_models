@@ -40,6 +40,8 @@ type BasicSearchParams struct {
 	View_Agent_Id string
 	View_User     string
 	Keyword       string
+	StartFrom     int
+	Limit         int
 	Item_Search   string
 	Wg            *sync.WaitGroup
 	Ch            chan interface{}
@@ -50,6 +52,7 @@ type BasicSearchResponse struct {
 	QuotesResponse   interface{} `json:"quotes_list"`
 	OrdersResponse   interface{} `json:"orders_list"`
 	ContactsResponse interface{} `json:"contacts_list"`
+	CountResponse    interface{} `json:"counts"`
 }
 
 type AdvancedSearchParams struct {
@@ -67,4 +70,11 @@ type UnsubParams struct {
 	Company_Id int
 	Date       string
 	Tx         *sql.Tx
+}
+
+type BasicSearchCounts struct {
+	Leads    interface{} `json:"leads"`
+	Quotes   interface{} `json:"quotes"`
+	Orders   interface{} `json:"orders"`
+	Accounts interface{} `json:"accounts"`
 }

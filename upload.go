@@ -3,14 +3,15 @@ package models
 import "database/sql"
 
 type AddNewDriverFilesParams struct {
-	Company_Id int
-	Carrier_Id string
-	File_Type  string
-	File_Name  string
-	File_URL   string
-	File_EXT   string
-	Date       string
-	Tx         *sql.Tx
+	Company_Id        int
+	Carrier_Id        string
+	File_Type         string
+	File_Name         string
+	File_Descriptions string
+	File_URL          string
+	File_EXT          string
+	Date              string
+	Tx                *sql.Tx
 }
 
 type DeleteContFileParams struct {
@@ -22,14 +23,17 @@ type DeleteContFileParams struct {
 }
 
 type AddDealFilesParams struct {
-	Company_Id     int
-	Item_Type      string
-	Item_Id        string
-	Item_Unique_Id string
-	File_Name      string
-	File_URL       string
-	File_EXT       string
-	Tx             *sql.Tx
+	Company_Id        int
+	Item_Type         string
+	Item_Id           string
+	Item_Unique_Id    string
+	File_Name         string
+	File_Type         string
+	File_Descriptions string
+	File_URL          string
+	Date              string
+	File_EXT          string
+	Tx                *sql.Tx
 }
 
 type DeleteDealFileParams struct {

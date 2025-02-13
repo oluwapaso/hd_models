@@ -121,6 +121,7 @@ type UpdateLogoParams struct {
 type UpdateExtBGParams struct {
 	Company_Id int
 	BG_Loc     string
+	Widget_Id  int
 	Tx         *sql.Tx
 }
 

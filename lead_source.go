@@ -113,9 +113,11 @@ type DealsReportData struct {
 }
 
 type LeadSourceReportData struct {
-	LeadSource         string  `json:"lead_source"`
-	Lead_Source_Status string  `json:"status"`
-	Total_Leads_Amnt   float64 `json:"total_leads_amount"`
+	LeadSourceId       interface{} `json:"lead_source_id"`
+	LeadSource         string      `json:"lead_source"`
+	Lead_Source_Type   string      `json:"lead_source_type"`
+	Lead_Source_Status string      `json:"status"`
+	Total_Leads_Amnt   float64     `json:"total_leads_amount"`
 	DealsReportData
 }
 
@@ -298,7 +300,7 @@ type CheckWidgetResp struct {
 	Widget_Exist     bool
 	Message          string
 	Background_Image string
-	Page_Script      string
+	Page_Script      interface{}
 	Company_Id       int
 }
 

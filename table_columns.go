@@ -18,7 +18,7 @@ const (
 		"auto_lock,stripe_info,sendgrid_api_key,thank_you,tracking_script,hotjar_script,livechat_script,auto_quote,auto_quote_formula," +
 		"notify_before_pickup,driver_before_temp,shipper_before_temp,notify_on_pickup,driver_on_temp,shipper_on_temp,system_sent_email," +
 		"auto_responder_sett,auto_responder_body,endpoints,deal_tags,default_mailer,return_url_pg_header,return_url_pg_subheader," +
-		"return_url_pg_body"
+		"return_url_pg_body,scripts"
 
 	EmailsTemplatesField cols = "email_unique_id,email_id,company_id,email_type,name,used_for,for_follow_up,text_contents,html_contents," +
 		"subject,description,attachment,cc_addresses,stats_data"
@@ -31,7 +31,7 @@ const (
 		"notifications_settings,password,phone,positive_feedback,ratings,status,super_active,super_agent_lead_no,total_recommendation," +
 		"total_reviews,username,webmail_settings"
 
-	AccntGrpField cols = "group_id,group_name,company_id,permissions"
+	AccntGrpField cols = "group_id,group_name,group_descriptions,company_id,permissions"
 
 	AgentsAccessField cols = "process_leads,process_quotes,process_orders,view_others_leads,process_others_leads,view_others_quotes," +
 		"process_others_quotes,view_others_orders,process_others_orders,create_quotes,create_orders,crt_del_clients,crt_del_agents," +
@@ -74,10 +74,11 @@ const (
 
 	Lead_sourceField cols = "source_id,company_id,source_email,api_access_key,price_per_lead,status,distributed,cron_processed,company_info," +
 		"auto_quote,autoqouote_formular,use_for_extnl_form,deflt_price_checker,automation_id,website_url,last_email_deleted,got_emails," +
-		"settings,import_mapping,thank_you_page,source_type"
+		"settings,import_mapping,thank_you_page,source_type,thank_you_page_header,thank_you_page_sub_header,thank_you_page_body," +
+		"quote_page_body,background_image,page_script"
 
-	Lead_source_settField cols = "settings_id,leads_source_id,company_id,agent_id,lead_multiples,assign_next_lead,leads_assigned,route_leads," +
-		"thank_you_page_header,thank_you_page_sub_header,thank_you_page_body,quote_page_body,background_image,page_script" //auto_quote,auto_quote_formula,use_for_extnl_form
+	Lead_source_settField cols = "settings_id,leads_source_id,company_id,agent_id,lead_multiples,assign_next_lead,leads_assigned,route_leads"
+	//auto_quote,auto_quote_formula,use_for_extnl_form
 
 	LeadsField cols = "lead_id,lead_uniq_id,company_id,dates,duplicate_info,car_run,ship_via,assigned_to,assigned_to_info," +
 		"original_assigned_to,referral,shipper,origin,destination,vehicles,source,source_type,source_id,payments,type,seen_by_agent," +

@@ -15,18 +15,20 @@ type LoadAccountGroupsParams struct {
 }
 
 type AddAccountGroupsParams struct {
-	Company_Id  int
-	Group_Name  string
-	Permissions string
-	Tx          *sql.Tx
+	Company_Id         int
+	Group_Name         string
+	Group_Descriptions string
+	Permissions        string
+	Tx                 *sql.Tx
 }
 
 type UpdateAccountGroupsParams struct {
-	Company_Id  int
-	Group_Id    int
-	Group_Name  string
-	Permissions string
-	Tx          *sql.Tx
+	Company_Id         int
+	Group_Id           int
+	Group_Name         string
+	Group_Descriptions string
+	Permissions        string
+	Tx                 *sql.Tx
 }
 
 type DeleteAccountGroupsParams struct {
