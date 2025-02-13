@@ -30,13 +30,12 @@ type LeadLists struct {
 
 type LeadDetails struct {
 	LeadLists
-	Original_Email       string      `json:"original_email,omitempty"`
-	Original_Assigned_To string      `json:"original_assigned_to,omitempty"`
-	Source_Id            string      `json:"source_id,omitempty"`
-	Referral             string      `json:"referral,omitempty"`
-	Tags                 interface{} `json:"tags,omitempty"`
-	Dates_Received       string      `json:"received,omitempty"`
-	Referral_Id          string      `json:"referral_id,omitempty"`
+	Original_Email string      `json:"original_email,omitempty"`
+	Source_Id      string      `json:"source_id,omitempty"`
+	Referral       string      `json:"referral,omitempty"`
+	Tags           interface{} `json:"tags,omitempty"`
+	Dates_Received string      `json:"received,omitempty"`
+	Referral_Id    string      `json:"referral_id,omitempty"`
 	//Not finished yet 11/22/2023
 }
 
